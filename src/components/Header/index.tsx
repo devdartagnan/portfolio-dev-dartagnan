@@ -114,19 +114,19 @@ export default function Header() {
       <StyledNavMenu className={display}>
         <ul>
           <li>
-              <a href="/" onClick={() => toggleNavMenu()}>ABOUT</a>
+              <Link href="/" onClick={() => toggleNavMenu()}>ABOUT</Link>
           </li>
           <li>
-              <a href="/portfolio"  onClick={() => toggleNavMenu()}>PORTFOLIO</a>
+              <Link href="/portfolio"  onClick={() => toggleNavMenu()}>PORTFOLIO</Link>
           </li>
           <li>
-              <a href="/contact"  onClick={() => toggleNavMenu()}>CONTACT</a>
+              <Link href="/contact"  onClick={() => toggleNavMenu()}>CONTACT</Link>
           </li>
           <p></p>
           <div className='container-social_midias'>
-            <a className='social_midias'>Linkedin</a>
-            <a className='social_midias'>Instagram</a>
-            <a className='social_midias'>Github</a>
+            <Link href={''} className='social_midias'>Linkedin</Link>
+            <Link href={''} className='social_midias'>Instagram</Link>
+            <Link href={''} className='social_midias'>Github</Link>
           </div>
         </ul>
         <SvgIcon onClick={toggleTheme} className='themeBtn'>
