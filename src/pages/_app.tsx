@@ -1,6 +1,20 @@
-import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
+import { ThemeProvider } from "styled-components"
+import { darkTheme } from "../styles/themes/darkTheme";
+import { GlobalStyle } from '../styles/globals';
+import { useLocalStorage } from "usehooks-ts";
+import Layout from './layout'
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+
+  const [theme] = useLocalStorage("theme_dart", darkTheme);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </Layout>
+    </ThemeProvider>
+  )
 }
