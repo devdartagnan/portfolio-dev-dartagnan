@@ -36,35 +36,44 @@ const StyledNavMenu = styled.nav`
         top: 40px;
         width: 100%;
         z-index: 1;
-
-        div{
-          align-self: baseline;
           
           .container-social_midias{
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        
-          .social_midias{
-            font-size: ${({ theme }) => theme.fontSizes.small};
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            
+            .social_midias{
+              font-size: ${({ theme }) => theme.fontSizes.small};
+              opacity: 0.8;
+              text-transform: uppercase;
+            }
           }
-        }
-        ul{
+          ul{
+          align-self: baseline;
           display: flex;
           flex-direction: column;
-          font-size: ${({ theme }) => theme.fontSizes.medium};
-          gap: 16px;
+          font-size:  28px;
+          gap: 24px;
+          list-style: none;
           margin-bottom: 16px;
+          p{
+            background-color: ${props => props.theme.colors.text};
+            height: 2px;
+            margin: 1rem 0;
+            opacity: 0.6;
+            width: 50%;
+          }
         }li{
           &:last-child{
           padding-bottom: 16px;
-        }}
+        }
       }
         .themeBtn{
           align-self: flex-end;
           cursor: pointer;
           height: 30px;
           justify-self: center;
+          margin-bottom: 40px;
           position: relative;
           -webkit-user-select: none;
           -moz-user-select: none;
@@ -103,25 +112,23 @@ export default function Header() {
     <StyledHeader>
       <IoMenuOutline size={'32px'} onClick={() => toggleNavMenu()} />
       <StyledNavMenu className={display}>
-        <div>
-          <ul>
-            <li>
-              <Link href="/">ABOUT</Link>
-            </li>
-            <li>
-              <Link href="/portfolio">PORTFOLIO</Link>
-            </li>
-            <li>
-              <Link href="/contact">CONTACT</Link>
-            </li>
-          </ul>
+        <ul>
+          <li>
+              <a href="/" onClick={() => toggleNavMenu()}>ABOUT</a>
+          </li>
+          <li>
+              <a href="/portfolio"  onClick={() => toggleNavMenu()}>PORTFOLIO</a>
+          </li>
+          <li>
+              <a href="/contact"  onClick={() => toggleNavMenu()}>CONTACT</a>
+          </li>
           <p></p>
           <div className='container-social_midias'>
             <a className='social_midias'>Linkedin</a>
             <a className='social_midias'>Instagram</a>
             <a className='social_midias'>Github</a>
           </div>
-        </div>
+        </ul>
         <SvgIcon onClick={toggleTheme} className='themeBtn'>
           <path d='M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z' />
         </SvgIcon>
