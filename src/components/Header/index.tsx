@@ -73,7 +73,7 @@ const StyledNavMenu = styled.nav`
           cursor: pointer;
           height: 30px;
           justify-self: center;
-          margin-bottom: 40px;
+          margin-bottom: 80px;
           position: relative;
           -webkit-user-select: none;
           -moz-user-select: none;

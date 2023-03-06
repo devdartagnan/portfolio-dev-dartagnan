@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import data from '../../api/data.json'
+import Link from 'next/link'
 
 const StyledContainer = styled.main`
     margin-top: 16px;
@@ -40,6 +41,7 @@ const StyledPortfolio = styled.section`
 `
 
 export default function Portfolio() {
+
     return (
         <StyledContainer>
             <select name="" id="">
@@ -52,7 +54,15 @@ export default function Portfolio() {
                 {data.map((data) => {
                     return (
                         <figure key={data.id}>
-                            <img src={data.thumb} alt={data.altImage} width='100' height="100" />
+                            <Link
+                                href={`/portfolio/${data.id}`}>
+                                <img
+                                    src={data.thumb}
+                                    alt={data.altImage}
+                                    width='100'
+                                    height="100"
+                                />
+                            </Link>
                             <p className='figure-title'>{data.titulo}</p>
                             <p>{data.cardDescription}</p>
                         </figure>

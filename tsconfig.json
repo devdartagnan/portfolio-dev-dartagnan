@@ -18,7 +18,7 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/portfolio/Details/[id].js"],
   "files":["src/styles/styled.d.ts"],
   "exclude": ["node_modules"]
 }
