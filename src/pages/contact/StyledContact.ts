@@ -57,6 +57,10 @@ export const StyledContainer = styled.main`
             margin-top: 24px;
             width: 86px;
         }
+        button:hover{
+            background-color: radial-gradient(ellipse at top, ${({ theme }) => theme.colors.hover}, transparent),            
+                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.colors.hover}, transparent);;
+        }
     }
     @media ${devices.tablet}{
         display: grid;

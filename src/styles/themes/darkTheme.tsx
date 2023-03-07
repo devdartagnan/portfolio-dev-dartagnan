@@ -10,6 +10,7 @@ export const darkTheme: DefaultTheme = {
         borderOpacity01: 'rgb(250, 250, 250, 0.1)',
         textOpacity04: 'rgba(250, 250, 250, 0.4)',
         textOpacity06: 'rgba(250, 250, 250, 0.6)',
+        hover:'#f5a1a1',
     },
     fontSizes: {
         small: '16px',

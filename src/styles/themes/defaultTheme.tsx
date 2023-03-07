@@ -10,6 +10,7 @@ export const defaultTheme: DefaultTheme = {
         borderOpacity01: '#3635373f',
         textOpacity04: '#3635375f',
         textOpacity06: '#363537a3',
+        hover:'#f5a1a1',
     },
     fontSizes: {
         small: '16px',

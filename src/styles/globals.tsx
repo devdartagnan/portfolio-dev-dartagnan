@@ -42,10 +42,10 @@ body {
   overflow-x: hidden;
 }
 ::-moz-selection { /* Code for Firefox */
-  color: #f5a1a1;
+  color:${({ theme }) => theme.colors.hover};
   }
 
 ::selection {
-  color: #f5a1a1;
+  color: ${({ theme }) => theme.colors.hover};
   }
 `;

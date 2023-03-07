@@ -11,6 +11,7 @@ declare module 'styled-components' {
             borderOpacity01: string,
             textOpacity04: string;
             textOpacity06: string;
+            hover:string;
         };
         fontSizes: {
             small: string;
