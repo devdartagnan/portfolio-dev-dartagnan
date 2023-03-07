@@ -3,10 +3,14 @@ import styled from 'styled-components'
 import { devices } from '../../../styles/breakPoints'
 
 const StyledBio = styled.section`
+    border-left: 1px solid ${({ theme }) => theme.colors.borderOpacity01};
+    border-right: 1px solid ${({ theme }) => theme.colors.borderOpacity01};
     display: flex;
     flex-direction: column;
     gap: 45px;
-    margin-top: 45px;
+    padding: 0 48px;
+    text-align: justify;
+    
     .biography-section{
         display: grid;
         gap: 18px;

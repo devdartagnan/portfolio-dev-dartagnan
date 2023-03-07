@@ -7,7 +7,6 @@ const roboto = Roboto({
     subsets: ['latin'],
 })
 export const StyledDiv = styled.div`
-margin-top: ${({theme})=> theme.fontSizes.large};
     @media ${devices.tablet}{
     grid-column: 1;
     grid-row: 1;
@@ -31,14 +30,14 @@ export const StyledTags = styled.section`
         font-weight: 400;
         gap: 8px;
         margin-bottom: 28px;
-        svg{
-            color: ${({ theme }) => theme.colors.text};
-            opacity: 0.8;
+        .svg{
+            color: ${({ theme }) => theme.colors.textOpacity06};
             font-size: 30px;
         }
         .subtitle{
-            color: ${({ theme }) => theme.colors.text};
-            opacity: 0.6;
+            color: ${({ theme }) => theme.colors.textOpacity06};
+            font-weight: 600;
+
     }
     
 }
@@ -47,7 +46,11 @@ export const StyledTags = styled.section`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 140px auto;
     grid-row: 2;
-    margin-top: 160px;
+    margin:76px auto 76px 20%;
+}
+@media ${devices.laptop}{
+    gap: 16px;
+    margin: 200px auto auto auto;
 }
 `
 export const StyledTech = styled.section`
@@ -66,11 +69,10 @@ export const StyledTech = styled.section`
         gap: 2px;
 
         .tech-item__trackBar{
-            background-color: ${({ theme }) => theme.colors.primary};
+            background-color: ${({ theme }) => theme.colors.textOpacity04};
             border-radius: 5px;
             display: flex;
             height: 7px;
-            opacity: 0.8;
             width: 100%;
 
             span{
@@ -91,7 +93,6 @@ export const StyledTech = styled.section`
     }
     @media ${devices.laptop}{
         border-bottom: none;
-        grid-column: 1;
-        grid-row: 1;
+        padding-top: 48px;
     }
 `

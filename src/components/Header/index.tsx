@@ -40,7 +40,7 @@ export default function Header() {
           <div className='container-social_midias'>
             <Link href={''} className='social_midias'>Linkedin</Link>
             <Link href={''} className='social_midias'>Instagram</Link>
-            <Link href={''} className='social_midias'>Github</Link>
+            <Link href={'https://github.com/devdartagnan'} className='social_midias'>Github</Link>
           </div>
         </ul>
         <SvgIcon onClick={toggleTheme} className='themeBtn'>

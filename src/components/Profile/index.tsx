@@ -12,6 +12,9 @@ const StyledProfilePicture = styled.section`
         margin: 56px 0;
         border-radius: 200px;
     }
+    h2{
+        width: 60%;
+    }
     @media ${devices.laptop}{
         grid-column-start: 3;
         img{

@@ -10,9 +10,12 @@ const StyledMain = styled.main`
   padding: 0 ${({ theme }) => theme.fontSizes.medium};
   @media ${devices.laptop}{
     display: grid;
-    gap: 75px;
+    gap: 25px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1;
+    max-width: 1660px;
+    margin: auto;
+    padding-top: 24px;
   }
 `
 export default function About() {

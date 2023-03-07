@@ -7,8 +7,9 @@ export const darkTheme: DefaultTheme = {
         secundary: '#181818',
         background: '#191919',
         text: '#fafafa',
-        textOpacity04: '#fafafa5f',
-        textOpacity06: '#fafafaa3',
+        borderOpacity01: 'rgb(250, 250, 250, 0.1)',
+        textOpacity04: 'rgba(250, 250, 250, 0.4)',
+        textOpacity06: 'rgba(250, 250, 250, 0.6)',
     },
     fontSizes: {
         small: '16px',

@@ -8,6 +8,7 @@ declare module 'styled-components' {
             secundary: string;
             background: string;
             text: string;
+            borderOpacity01: string,
             textOpacity04: string;
             textOpacity06: string;
         };

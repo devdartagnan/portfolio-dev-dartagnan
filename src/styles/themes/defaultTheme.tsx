@@ -7,6 +7,7 @@ export const defaultTheme: DefaultTheme = {
         secundary: '#DEDEDE',
         background: '#E8E8E8',
         text: '#363537',
+        borderOpacity01: '#3635373f',
         textOpacity04: '#3635375f',
         textOpacity06: '#363537a3',
     },
