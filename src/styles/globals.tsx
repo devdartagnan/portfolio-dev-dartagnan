@@ -41,4 +41,11 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+::-moz-selection { /* Code for Firefox */
+  color: #f5a1a1;
+  }
+
+::selection {
+  color: #f5a1a1;
+  }
 `;

@@ -1,121 +1,12 @@
 import { IoMenuOutline } from 'react-icons/io5'
-import styled from 'styled-components'
 import { darkTheme } from "../../styles/themes/darkTheme";
 import { defaultTheme } from "../../styles/themes/defaultTheme";
 import { useLocalStorage } from "usehooks-ts";
 import { useState } from 'react'
 import Link from 'next/link'
 import SvgIcon from '@mui/material/SvgIcon'
-import { devices } from '../../styles/breakPoints'
-import classNames from 'classnames';
+import { StyledHeader, StyledNavMenu } from './StyledHeader'
 
-const StyledHeader = styled.header`
-    display:grid;
-    height: auto;
-    margin: 16px 0 auto 0;
-    place-items: center;
-    padding: 0 24px;
-    position: relative;
-    width: 100%;
-    .display-none{
-          display: none;
-        }
-    .display-grid{
-      display: grid;
-    }
-    @media ${devices.tablet}{
-      margin: 0;
-      svg{
-        display: none;
-      }
-    }
-        
-    `
-
-const StyledNavMenu = styled.nav`
-        align-items: center;
-        background-color:  ${props => props.theme.colors.secundary};
-        font-size: ${({ theme }) => theme.fontSizes.large};
-        gap:16px;
-        height: calc(100vh - 40px);
-        padding: 32px 0;
-        position: absolute;
-        text-align: center;
-        top: 40px;
-        width: 100%;
-        z-index: 1;
-          
-          .container-social_midias{
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            
-            .social_midias{
-              font-size: ${({ theme }) => theme.fontSizes.small};
-              opacity: 0.8;
-              text-transform: uppercase;
-            }
-          }
-          ul{
-          align-self: baseline;
-          display: flex;
-          flex-direction: column;
-          font-size:  28px;
-          gap: 24px;
-          list-style: none;
-          margin-bottom: 16px;
-          p{
-            background-color: ${props => props.theme.colors.text};
-            height: 2px;
-            margin: 1rem 0;
-            opacity: 0.6;
-            width: 50%;
-          }
-        }li{
-          &:last-child{
-          padding-bottom: 16px;
-        }
-      }
-        .themeBtn{
-          align-self: flex-end;
-          cursor: pointer;
-          height: 30px;
-          justify-self: center;
-          margin-bottom: 80px;
-          position: relative;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          user-select: none;
-          width: 40px;
-        }
-        @media ${devices.tablet}{
-          background-color:transparent;
-          height: fit-content;
-          margin-bottom: 24px;
-          padding: 0;
-          position: relative;
-          top:24px;
-          width: fit-content;
-          ul{
-            align-items: center;
-            flex-direction: row;
-            font-size: 16px;
-            .container-social_midias{
-              align-items: center;
-              flex-direction: row;
-              gap: 16px;
-              .social_midias{
-              font-size: 12px;
-              opacity: 0.8;
-              text-transform: uppercase;
-              }
-            }
-          }
-          .themeBtn{
-          }
-}
-    `
 
 
 export default function Header() {
@@ -128,26 +19,22 @@ export default function Header() {
   };
 
   function toggleNavMenu() {
-    display === 'display-none' ? setDisplay('display-grid') : setDisplay('display-none')
+    display === 'display-none' ? setDisplay('display-flex') : setDisplay('display-none')
   }
-
-  const width = globalThis.window?.innerWidth > 780
 
   return (
     <StyledHeader>
-      <IoMenuOutline size={'32px'} onClick={() => toggleNavMenu()} />
-      <StyledNavMenu className={classNames({
-        [display]: width ? false : true
-      })}>
+      <IoMenuOutline size={'32px'} onClick={() => toggleNavMenu()} className='menu-bar' />
+      <StyledNavMenu className={display}>
         <ul>
           <li>
-            <Link href="/" onClick={() => toggleNavMenu()}>ABOUT</Link>
+            <Link href="/" onClick={() => window.innerWidth > 768 ? void(0): toggleNavMenu()}>ABOUT</Link>
           </li>
           <li>
-            <Link href="/portfolio" onClick={() => toggleNavMenu()}>PORTFOLIO</Link>
+            <Link href="/portfolio" onClick={() => window.innerWidth > 768 ? void(0): toggleNavMenu()}>PORTFOLIO</Link>
           </li>
           <li>
-            <Link href="/contact" onClick={() => toggleNavMenu()}>CONTACT</Link>
+            <Link href="/contact" onClick={() => window.innerWidth > 768 ? void(0): toggleNavMenu()}>CONTACT</Link>
           </li>
           <p></p>
           <div className='container-social_midias'>

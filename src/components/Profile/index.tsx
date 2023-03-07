@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
+import { devices } from '../../styles/breakPoints'
 
 const StyledProfilePicture = styled.section`
     display: flex;
@@ -10,6 +11,12 @@ const StyledProfilePicture = styled.section`
     img{
         margin: 56px 0;
         border-radius: 200px;
+    }
+    @media ${devices.laptop}{
+        grid-column-start: 3;
+        img{
+        margin:0 0 56px 0;
+    }
     }
 `
 

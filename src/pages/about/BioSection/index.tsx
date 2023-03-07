@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { devices } from '../../../styles/breakPoints'
 
 const StyledBio = styled.section`
     display: flex;
@@ -12,6 +13,10 @@ const StyledBio = styled.section`
         ul{
             padding-left: 1rem;
         }
+    }
+    @media ${devices.laptop}{
+        grid-column: 2;
+        grid-row: 1;
     }
 `
 
