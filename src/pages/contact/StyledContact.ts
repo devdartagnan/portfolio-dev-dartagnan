@@ -106,3 +106,7 @@ export const StyledContainer = styled.main`
         }
     }
 `
+
+
+
+export default StyledContainer

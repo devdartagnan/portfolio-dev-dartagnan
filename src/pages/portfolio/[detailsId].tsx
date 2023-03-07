@@ -1,6 +1,7 @@
 import React from 'react'
 import data from '../../api/data.json'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 import { StyledDetails, StyledTech } from './StyledPortfolio'
 
 
@@ -14,7 +15,7 @@ export default function Details() {
                 return detailsId !== data.id ? false :
                     (
                         <div className='img-carrousel' key={data.id}>
-                            <img src={data.altPage.contentImages[0]} alt="" />
+                            <Image src={data.altPage.contentImages[0]} alt="" />
                             <section className="details-container">
                                 <h2>{data.titulo}</h2>
                                 <p>{data.altPage.textoDescricao}</p>

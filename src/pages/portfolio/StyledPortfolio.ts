@@ -141,3 +141,5 @@ export const StyledTech = styled.section`
         }
     }
 `
+
+export default StyledContainer

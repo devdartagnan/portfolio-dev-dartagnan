@@ -1,6 +1,7 @@
 import React from 'react'
 import data from '../../api/data.json'
 import Link from 'next/link'
+import Image from 'next/image'
 import { StyledContainer, StyledPortfolio } from './StyledPortfolio'
 
 export default function Portfolio() {
@@ -20,7 +21,7 @@ export default function Portfolio() {
                             <Link
                                 className='figure-link'
                                 href={`/portfolio/${data.id}`}>
-                                <img
+                                <Image
                                     src={data.thumb}
                                     alt={data.altImage}
                                     width='100'

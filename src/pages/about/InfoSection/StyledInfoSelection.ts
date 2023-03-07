@@ -96,3 +96,4 @@ export const StyledTech = styled.section`
         padding-top: 48px;
     }
 `
+export default StyledTags
