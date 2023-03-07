@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import data from '../../api/data.json'
 import Link from 'next/link'
+import {devices} from '../../styles/breakPoints'
 
 const StyledContainer = styled.main`
     margin-top: 16px;
@@ -14,7 +15,6 @@ const StyledContainer = styled.main`
         margin: 0 ${({ theme }) => theme.fontSizes.medium};
         padding:4px;
     }
-
 `
 
 const StyledPortfolio = styled.section`
@@ -37,6 +37,9 @@ const StyledPortfolio = styled.section`
             font-weight: 600;
             opacity: 0.8;
         }
+    }
+    @media ${devices.tablet} {
+        max-width: 800px;
     }
 `
 

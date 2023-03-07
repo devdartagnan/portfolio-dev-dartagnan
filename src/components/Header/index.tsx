@@ -6,7 +6,8 @@ import { useLocalStorage } from "usehooks-ts";
 import { useState } from 'react'
 import Link from 'next/link'
 import SvgIcon from '@mui/material/SvgIcon'
-
+import { devices } from '../../styles/breakPoints'
+import classNames from 'classnames';
 
 const StyledHeader = styled.header`
     display:grid;
@@ -19,9 +20,16 @@ const StyledHeader = styled.header`
     .display-none{
           display: none;
         }
-        .display-grid{
-          display: grid;
-        }
+    .display-grid{
+      display: grid;
+    }
+    @media ${devices.tablet}{
+      margin: 0;
+      svg{
+        display: none;
+      }
+    }
+        
     `
 
 const StyledNavMenu = styled.nav`
@@ -80,23 +88,38 @@ const StyledNavMenu = styled.nav`
           -ms-user-select: none;
           user-select: none;
           width: 40px;
-              .checkmark {
-                background-color: ${props => props.theme.colors.text};
-                color: ${props => props.theme.colors.text};
-                height: 32px;
-                left: 50%;
-                right: 50%;
-                position: absolute;
-                top: 0;
-                width: 32px;
         }
-        }
+        @media ${devices.tablet}{
+          background-color:transparent;
+          height: fit-content;
+          margin-bottom: 24px;
+          padding: 0;
+          position: relative;
+          top:24px;
+          width: fit-content;
+          ul{
+            align-items: center;
+            flex-direction: row;
+            font-size: 16px;
+            .container-social_midias{
+              align-items: center;
+              flex-direction: row;
+              gap: 16px;
+              .social_midias{
+              font-size: 12px;
+              opacity: 0.8;
+              text-transform: uppercase;
+              }
+            }
+          }
+          .themeBtn{
+          }
+}
     `
 
 
 export default function Header() {
   const [display, setDisplay] = useState('display-none')
-
 
   const [theme, setTheme] = useLocalStorage("theme_dart", defaultTheme);
 
@@ -108,19 +131,23 @@ export default function Header() {
     display === 'display-none' ? setDisplay('display-grid') : setDisplay('display-none')
   }
 
+  const width = globalThis.window?.innerWidth > 780
+
   return (
     <StyledHeader>
       <IoMenuOutline size={'32px'} onClick={() => toggleNavMenu()} />
-      <StyledNavMenu className={display}>
+      <StyledNavMenu className={classNames({
+        [display]: width ? false : true
+      })}>
         <ul>
           <li>
-              <Link href="/" onClick={() => toggleNavMenu()}>ABOUT</Link>
+            <Link href="/" onClick={() => toggleNavMenu()}>ABOUT</Link>
           </li>
           <li>
-              <Link href="/portfolio"  onClick={() => toggleNavMenu()}>PORTFOLIO</Link>
+            <Link href="/portfolio" onClick={() => toggleNavMenu()}>PORTFOLIO</Link>
           </li>
           <li>
-              <Link href="/contact"  onClick={() => toggleNavMenu()}>CONTACT</Link>
+            <Link href="/contact" onClick={() => toggleNavMenu()}>CONTACT</Link>
           </li>
           <p></p>
           <div className='container-social_midias'>

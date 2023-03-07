@@ -17,9 +17,48 @@ const StyledDetails = styled.section`
         flex-direction: column;
         gap: 16px;
         margin-top: 24px;
-        padding: 0 ${({ theme }) => theme.fontSizes.medium};
+        padding: 24px ${({ theme }) => theme.fontSizes.medium};
     }
 }
+`
+
+const StyledTech = styled.section`
+    border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 45px;
+    padding: 0 ${({ theme }) => theme.fontSizes.medium};
+    
+    .tech-item{
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        .tech-item__trackBar{
+            background-color: ${({ theme }) => theme.colors.primary};
+            border-radius: 5px;
+            display: flex;
+            height: 7px;
+            opacity: 0.8;
+            width: 100%;
+
+            span{
+                background-color: ${({ theme }) => theme.colors.text};
+                border-radius: 5px 0px 0px 5px;
+                width: 80%;
+            }
+            .trackBar__Javascript{
+                width: 60%;
+            }
+            .trackBar__Typescript{
+                width: 35%;
+            }
+            .trackBar__htmlCss{
+                width: 80%;
+            }
+        }
+    }
 `
 
 export default function Details() {
@@ -41,6 +80,32 @@ export default function Details() {
                         </div>
                     )
             })}
+            <StyledTech>
+                <h2>
+                    Tech
+                </h2>
+                <div className='tech-item'>
+                    <p className='tech-item__title'>Html/Css</p>
+                    <div className='tech-item__trackBar'>
+                        <span className='trackBar__htmlCss'>
+                        </span>
+                    </div>
+                </div>
+                <div className='tech-item'>
+                    <p className='tech-item__title'>Javascript</p>
+                    <div className='tech-item__trackBar'>
+                        <span className='trackBar__Javascript'>
+                        </span>
+                    </div>
+                </div>
+                <div className='tech-item'>
+                    <p className='tech-item__title'>Typescript</p>
+                    <div className='tech-item__trackBar'>
+                        <span className='trackBar__Typescript'>
+                        </span>
+                    </div>
+                </div>
+            </StyledTech>
         </StyledDetails>
     )
 }

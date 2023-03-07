@@ -6,15 +6,16 @@ declare module 'styled-components' {
         colors: {
             primary: string;
             secundary: string;
-
             background: string;
             text: string;
+            textOpacity04: string;
+            textOpacity06: string;
         };
         fontSizes: {
             small: string;
             medium: string;
             large: string;
-        };
+        }
     }
 
     export interface CustomTheme {
@@ -22,7 +23,6 @@ declare module 'styled-components' {
         colors: {
             primary: string;
             secundary: string;
-
             background: string;
             text: string;
         };
