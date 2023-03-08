@@ -8,10 +8,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**drive.google.com/**',
+        hostname: 'drive.google.com/',
       },
     ],
-    formats: ['image/avif', 'image/webp'],
   },
 }
 
