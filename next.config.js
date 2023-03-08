@@ -8,8 +8,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'drive.google.com/',
-        pathname: '/uc?id=**'
+        hostname: 'i.postimg.cc'
       },
     ],
   },
