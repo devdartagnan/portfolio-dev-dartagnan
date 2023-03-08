@@ -92,6 +92,7 @@ export const StyledPortfolio = styled.section`
 // This part is for [detailsID].tsx file 
 
 export const StyledDetails = styled.section`
+    
 .img-carrousel{
     height: auto;
     margin-top: 24px;
@@ -102,7 +103,7 @@ export const StyledDetails = styled.section`
     }
     .button-top{
         border: none;
-        color: ${({theme}) => theme.colors.text};
+        color: ${({ theme }) => theme.colors.text};
         opacity: 0.6;
         height: 40px;
         position: absolute;
@@ -112,7 +113,7 @@ export const StyledDetails = styled.section`
     .button-bottom{
         border: none;
         bottom: 0;
-        color: ${({theme}) => theme.colors.text};
+        color: ${({ theme }) => theme.colors.text};
         opacity: 0.6;
         height: 40px;
         position: absolute;
@@ -122,11 +123,12 @@ export const StyledDetails = styled.section`
     
 }
 @media ${devices.tablet} {
-        display: grid;
-        grid-template-columns: 45% auto;
-        padding: 24px ${({ theme }) => theme.fontSizes.medium};
+    display: grid;
+    grid-template-columns: 45% auto;
+    height: calc(100vh - 160px);
+    padding: 24px ${({ theme }) => theme.fontSizes.medium};
         .img-carrousel{
-            height: calc(100vh - 40px);
+            height: 360px;
             width: 100%;
             img{
                 height: auto;

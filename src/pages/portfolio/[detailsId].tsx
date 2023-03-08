@@ -19,7 +19,11 @@ export default function Details() {
                             <button className='button-top'>
                                 <i></i>
                             </button>
-                            <Image src={Chart} alt="" />
+                            {data.altPage.contentImages.map(img => {
+                                return (
+                                    <Image src={img} alt="" key={img.indexOf(img)}/>
+                                )
+                            })}
                             <button className='button-bottom'>
                                 <i></i>
                             </button>
