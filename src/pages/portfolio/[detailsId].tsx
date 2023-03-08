@@ -3,6 +3,7 @@ import data from '../../api/data.json'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { StyledDetails, StyledTech } from './StyledPortfolio'
+import Chart from '../../../public/images/chart.jpg'
 
 
 export default function Details() {
@@ -15,11 +16,13 @@ export default function Details() {
                 return detailsId !== data.id ? false :
                     (
                         <div className='img-carrousel' key={data.id}>
-                            <Image src={data.altPage.contentImages[0]} alt="" />
-                            <section className="details-container">
-                                <h2>{data.titulo}</h2>
-                                <p>{data.altPage.textoDescricao}</p>
-                            </section>
+                            <button className='button-top'>
+                                <i></i>
+                            </button>
+                            <Image src={Chart} alt="" />
+                            <button className='button-bottom'>
+                                <i></i>
+                            </button>
                         </div>
                     )
             })}
@@ -48,6 +51,15 @@ export default function Details() {
                         </span>
                     </div>
                 </div>
+                {data.map((data) => {
+                    return detailsId !== data.id ? false :
+                        (
+                            <section className="details-container">
+                                <h2>{data.titulo}</h2>
+                                <p>{data.altPage.textoDescricao}</p>
+                            </section>
+                        )
+                })}
             </StyledTech>
         </StyledDetails>
     )

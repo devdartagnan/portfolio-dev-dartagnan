@@ -27,6 +27,7 @@ export const StyledPortfolio = styled.section`
         flex-direction: column;
         gap: 8px;
         margin: 16px 0;
+
         .figure-link{
             img{
                 height: 100%;
@@ -37,8 +38,13 @@ export const StyledPortfolio = styled.section`
         }
         .figure-title{
             color: ${({ theme }) => theme.colors.text};
+            font-size: 16px;
             font-weight: 600;
-            opacity: 0.8;
+        }
+        .figure-description{
+            color: ${({ theme }) => theme.colors.textOpacity04};
+            font-size: 14px;
+            font-weight: 400;
         }
     }
     @media ${devices.tablet} {
@@ -89,18 +95,49 @@ export const StyledDetails = styled.section`
 .img-carrousel{
     height: auto;
     margin-top: 24px;
+    position: relative;
     width: 100vw;
     img{
         width: 100%;
     }
-    .details-container{
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        margin-top: 24px;
-        padding: 24px ${({ theme }) => theme.fontSizes.medium};
+    .button-top{
+        border: none;
+        color: ${({theme}) => theme.colors.text};
+        opacity: 0.6;
+        height: 40px;
+        position: absolute;
+        right: 40%;
+        width: 80px;
     }
+    .button-bottom{
+        border: none;
+        bottom: 0;
+        color: ${({theme}) => theme.colors.text};
+        opacity: 0.6;
+        height: 40px;
+        position: absolute;
+        right: 40%;
+        width: 80px;
+    }
+    
 }
+@media ${devices.tablet} {
+        display: grid;
+        grid-template-columns: 45% auto;
+        padding: 24px ${({ theme }) => theme.fontSizes.medium};
+        .img-carrousel{
+            height: calc(100vh - 40px);
+            width: 100%;
+            img{
+                height: auto;
+                width: 100%;
+    }
+        }
+    }
+
+    @media ${devices.laptopL} {
+        
+    }
 `
 
 export const StyledTech = styled.section`
@@ -108,6 +145,7 @@ export const StyledTech = styled.section`
     display: flex;
     flex-direction: column;
     gap: 24px;
+    margin-top: 24px;
     padding-bottom: 45px;
     padding: 0 ${({ theme }) => theme.fontSizes.medium};
     
@@ -139,7 +177,16 @@ export const StyledTech = styled.section`
                 width: 80%;
             }
         }
+        
     }
+    .details-container{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 24px;
+    }
+    @media ${devices.tablet} {}
+    
 `
 
 export default StyledContainer

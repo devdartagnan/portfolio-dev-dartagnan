@@ -23,13 +23,15 @@ export default function Portfolio() {
                                 href={`/portfolio/${data.id}`}>
                                 <Image
                                     src={data.thumb}
+                                    blurDataURL={'none'}
                                     alt={data.altImage}
-                                    width='100'
-                                    height="100"
+                                    height="0"
+                                    sizes="100vw"
+                                    width="0"
                                 />
                             </Link>
                             <p className='figure-title'>{data.titulo}</p>
-                            <p>{data.cardDescription}</p>
+                            <p className='figure-description'>{data.cardDescription}</p>
                         </figure>
                     )
                 })}

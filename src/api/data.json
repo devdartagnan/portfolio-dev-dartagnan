@@ -4,12 +4,11 @@
         "cardDescription": "Calculadora feita com javascipt e sass",
         "titulo": "Calculadora",
         "tag": ["javascript"," sass"],
-        "thumb": "http://drive.google.com/uc?export=view&id=1lRypbO_ro6CS4ANxdYOJdYdnRH-Sr-5_",
+        "thumb":"https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
         "altImage": "Calculadora simples",
         "altPage": {
             "contentImages": [
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL",
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL"
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf"
             ],
             "projectUrl": "https://calculadora-build.vercel.app/",
             "textoDescricao": "calculadora feita utilizando as tecnologias html,sass e javascript"
@@ -20,12 +19,12 @@
         "cardDescription": "Paper Rock Sciscor",
         "titulo": "Paper Rock Sciscor",
         "tag": ["javascript"," typescript"],
-        "thumb": "http://drive.google.com/uc?export=view&id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
+        "thumb":"https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
         "altImage": "Paper Rock Sciscor game",
         "altPage": {
             "contentImages": [
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL",
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL"
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf"
             ],
             "projectUrl": "paper-rock-sciscor-simple-js.vercel.app",
             "textoDescricao": "Paper Rock Sciscor"
@@ -36,12 +35,12 @@
         "cardDescription": "Random quotes Issac Newton",
         "titulo": "Random quotes Issac Newton",
         "tag": ["javascript"," sass"],
-        "thumb": "http://drive.google.com/uc?export=view&id=1wnxIANqCYaEoS8TveOUqmSimpqW8Ov_H",
+        "thumb":"https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
         "altImage": "Random quotes Issac Newton",
         "altPage": {
             "contentImages": [
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL",
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL"
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf"
             ],
             "projectUrl": "random-quotes-issac-newton.vercel.app",
             "textoDescricao": "Random quotes Issac Newton"
@@ -52,12 +51,12 @@
         "cardDescription": "Login screen, CRUD, using localhost",
         "titulo": "Login",
         "tag": ["javascript"," typescript"," sass"],
-        "thumb": "http://drive.google.com/uc?export=view&id=1kAoR6b2xeyAczD9kHJp9CwhkHxiSYDUb",
+        "thumb":"https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
         "altImage": "Login screen",
         "altPage": {
             "contentImages": [
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL",
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL"
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf"
             ],
             "projectUrl": "https://calculadora-build.vercel.app/",
             "textoDescricao": "calculadora feita utilizando as tecnologias html,sass e javascript"
@@ -68,12 +67,12 @@
         "cardDescription": "Card holder page, responsive, autotype",
         "titulo": "Card holder",
         "tag": ["sass"," typescript"],
-        "thumb": "http://drive.google.com/uc?export=view&id=1D7T3pAE1fCCHbGp2Kv1knWG_a2sX7gk8",
+        "thumb":"https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
         "altImage": "Card holder page",
         "altPage": {
             "contentImages": [
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL",
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL"
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf"
             ],
             "projectUrl": "https://calculadora-build.vercel.app/",
             "textoDescricao": "calculadora feita utilizando as tecnologias html,sass e javascript"
@@ -84,12 +83,12 @@
         "cardDescription": "Chart of expensives, responsive, using framework",
         "titulo": "Chart",
         "tag": ["javascript"," typescript","react"],
-        "thumb": "http://drive.google.com/uc?export=view&id=1n0vLjXht4Uxcfd5B1-7TXWr7-f2qHRew",
+        "thumb":"https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
         "altImage": "Chart of expensives",
         "altPage": {
             "contentImages": [
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL",
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL"
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf"
             ],
             "projectUrl": "https://calculadora-build.vercel.app/",
             "textoDescricao": "calculadora feita utilizando as tecnologias html,sass e javascript"
@@ -100,12 +99,12 @@
         "cardDescription": "Alura space, done using React",
         "titulo": "Alura space",
         "tag": ["javascript"," typescript","react"],
-        "thumb": "http://drive.google.com/uc?export=view&id=1Vxx2RZiVB7nSUeLO8a-wefheN-gvf0y4",
+        "thumb":"https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
         "altImage": "Alura space page",
         "altPage": {
             "contentImages": [
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL",
-                "https://drive.google.com/uc?export=view&id=13r8ASm6YLZCtxIBh7RslsdikXRl-O6YL"
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf"
             ],
             "projectUrl": "https://calculadora-build.vercel.app/",
             "textoDescricao": "calculadora feita utilizando as tecnologias html,sass e javascript"
@@ -116,12 +115,12 @@
         "cardDescription": "Alura geek, e-commerce html css e js page",
         "titulo": "Alura geek",
         "tag": ["javascript","react"],
-        "thumb": "http://drive.google.com/uc?export=view&id=10obaHfR9WFQ9WZFZPZ18E5LrvWgnxYwm",
+        "thumb":"https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
         "altImage": "Geek page",
         "altPage": {
             "contentImages": [
-                "http://drive.google.com/uc?export=view&id=10obaHfR9WFQ9WZFZPZ18E5LrvWgnxYwm",
-                "http://drive.google.com/uc?export=view&id=10obaHfR9WFQ9WZFZPZ18E5LrvWgnxYwm"
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf",
+                "https://drive.google.com/uc?id=1IjYmBaziLHagSmG-RUsmveuoPhmKkpqf"
             ],
             "projectUrl": "https://calculadora-build.vercel.app/",
             "textoDescricao": "calculadora feita utilizando as tecnologias html,sass e javascript"
