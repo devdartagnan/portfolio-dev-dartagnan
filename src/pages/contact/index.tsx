@@ -17,10 +17,6 @@ export default function Contact() {
                     Email
                     <input className='input' type="text" />
                 </label>
-                <label htmlFor="reason">
-                    Reason
-                    <input className='input' type="text" />
-                </label>
                 <label htmlFor="text">
                     Message
                     <textarea className='textarea' />

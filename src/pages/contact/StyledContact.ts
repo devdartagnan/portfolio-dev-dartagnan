@@ -83,7 +83,7 @@ export const StyledContainer = styled.main`
             label{
                 width: 100%;
             }.textarea{
-            height: 80px;
+            height: 160px;
             padding: 12px 0 0 12px;
             width:50%;
         }
