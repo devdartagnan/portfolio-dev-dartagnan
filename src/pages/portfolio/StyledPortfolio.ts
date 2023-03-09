@@ -17,37 +17,50 @@ export const StyledContainer = styled.main`
 `
 
 export const StyledPortfolio = styled.section`
-    display: grid;
-    margin: 16px 0;
-    place-items: center;
-    text-align: center;
-    
-    figure{
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        margin: 16px 0;
+    display: flex;
+    flex-direction: column;
 
-        .figure-link{
-            img{
-                height: 100%;
-                width: auto;
+    figure{
+        display: grid;
+        gap: 8px;
+        height: auto;
+        margin: 16px 0;
+        place-items: center;
+        width: 100%;
+        a{
+            display: grid;
+                background: radial-gradient(ellipse at top, ${({ theme }) => theme.colors.primary}, transparent),            
+                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.colors.background}, transparent);
+                height: 270px;
+                place-items: center;
+                width: 100%;
+                    img{
+                        height: 100%;
+                        width: auto;
+                        max-width:100%;
+                        max-height:100%;
+                    }
+                .figure-link:hover img{
+                    transform: scale(1.2,1.2);
+                }
+                .figure-title{
+                    color: ${({ theme }) => theme.colors.text};
+                    font-size: 16px;
+                    font-weight: 600;
+                    align-self: center;
+                }
+                .figure-description{
+                    color: ${({ theme }) => theme.colors.textOpacity04};
+                    font-size: 14px;
+                    font-weight: 400;
+                }
             }
-        }.figure-link:hover img{
-            transform: scale(1.2,1.2);
         }
-        .figure-title{
-            color: ${({ theme }) => theme.colors.text};
-            font-size: 16px;
-            font-weight: 600;
-        }
-        .figure-description{
-            color: ${({ theme }) => theme.colors.textOpacity04};
-            font-size: 14px;
-            font-weight: 400;
-        }
-    }
     @media ${devices.tablet} {
+        display: grid;
+        margin: 16px 0;
+        place-items: center;
+        text-align: center;
         gap: 48px;
         grid-template-columns: 1fr 1fr;
         margin: auto;

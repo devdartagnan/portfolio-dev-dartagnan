@@ -83,11 +83,14 @@ export const StyledContainer = styled.main`
             label{
                 width: 100%;
             }.textarea{
+                font-size: 16px;
             height: 160px;
             padding: 12px 0 0 12px;
+            text-transform: capitalize;
             width:50%;
         }
         .input{
+            font-size:16px;
             height: 36px;
             padding-left: 12px;
             width: 50%;
