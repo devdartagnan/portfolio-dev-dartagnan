@@ -22,11 +22,12 @@ export default function Portfolio() {
                                 className='figure-link'
                                 href={`/portfolio/${data.id}`}>
                                 <Image
-                                    src={data.thumb}
-                                    blurDataURL={'none'}
                                     alt={data.altImage}
+                                    blurDataURL={'none'}
                                     height="0"
                                     sizes="100vw"
+                                    src={data.thumb}
+                                    unoptimized={true}
                                     width="0"
                                 />
                             </Link>

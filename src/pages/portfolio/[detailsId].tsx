@@ -21,7 +21,12 @@ export default function Details() {
                             </button>
                             {data.altPage.contentImages.map(img => {
                                 return (
-                                    <Image src={img} alt="" key={img.indexOf(img)}/>
+                                    <Image 
+                                    alt='' 
+                                    key={img.indexOf(img)}
+                                    src={img} 
+                                    unoptimized={true}
+                                    />
                                 )
                             })}
                             <button className='button-bottom'>

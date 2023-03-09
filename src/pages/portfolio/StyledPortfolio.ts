@@ -38,7 +38,7 @@ export const StyledPortfolio = styled.section`
                         height: 100%;
                         width: auto;
                         max-width:100%;
-                        max-height:100%;
+                        max-height:270px;
                     }
                 .figure-link:hover img{
                     transform: scale(1.2,1.2);

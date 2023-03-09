@@ -58,6 +58,7 @@ export const StyledTech = styled.section`
     display: flex;
     flex-direction: column;
     gap: 24px;
+    margin-bottom: 36px;
     padding-bottom: 45px;
 
     h2{
