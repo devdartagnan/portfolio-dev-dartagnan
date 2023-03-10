@@ -6,6 +6,7 @@ const roboto = Roboto({
   weight:  ["100" , "300" , "400" , "500" , "700" , "900"],
   subsets: ['latin'],
 })
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const GlobalStyle = createGlobalStyle`
@@ -25,7 +26,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6, strong {
-    font-weight: 700;
+    font-family: ${inter.style.fontFamily};
+    font-weight: 500;
   }
 
   button {
@@ -38,6 +40,7 @@ export const GlobalStyle = createGlobalStyle`
   
 html,
 body {
+  height: 100%;
   max-width: 100vw;
   overflow-x: hidden;
 }

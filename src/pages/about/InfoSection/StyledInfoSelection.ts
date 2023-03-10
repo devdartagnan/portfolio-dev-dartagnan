@@ -1,11 +1,13 @@
 import styled from 'styled-components'
-import { Roboto } from 'next/font/google'
+import { Inter, Roboto } from 'next/font/google'
 import { devices } from '../../../styles/breakPoints'
 
 const roboto = Roboto({
     weight: ["100", "300", "400", "500", "700", "900"],
     subsets: ['latin'],
 })
+const inter = Inter({ subsets: ['latin'] })
+
 export const StyledDiv = styled.div`
     @media ${devices.tablet}{
     grid-column: 1;
@@ -31,14 +33,16 @@ export const StyledTags = styled.section`
         gap: 8px;
         margin-bottom: 28px;
         .svg{
-            color: ${({ theme }) => theme.colors.textOpacity06};
+            color: ${({ theme }) => theme.colors.text};
             font-size: 30px;
         }
         .subtitle{
-            color: ${({ theme }) => theme.colors.textOpacity06};
+            color: ${({ theme }) => theme.colors.text};
             font-weight: 600;
-
     }
+        p{
+            color: ${({ theme }) => theme.colors.textOpacity06};
+        }
     
 }
 @media ${devices.tablet}{
@@ -50,7 +54,10 @@ export const StyledTags = styled.section`
 }
 @media ${devices.laptop}{
     gap: 16px;
-    margin: 200px auto auto auto;
+    margin: 176px auto auto auto;
+    .tags-cards{
+        margin-bottom: 0;
+    }
 }
 `
 export const StyledTech = styled.section`
@@ -62,39 +69,106 @@ export const StyledTech = styled.section`
     padding-bottom: 45px;
 
     h2{
-        font-family: ${roboto.style.fontFamily};
+        margin-bottom: 16px;
     }
-    .tech-item{
+    .skills{
         display: flex;
-        flex-direction: column;
-        gap: 2px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
 
-        .tech-item__trackBar{
-            background-color: ${({ theme }) => theme.colors.textOpacity04};
+        .skill-item{
+            display: flex;
+            flex-direction: column;
+            font-family: ${roboto.style.fontFamily};
+            gap: 16px;
+            width: 35%;
+
+            .item__icon{
+                font-size: 48px;
+            }
+            .skill-item__trackBar{
+            background-color: ${({ theme }) => theme.colors.borderOpacity01};
             border-radius: 5px;
             display: flex;
             height: 7px;
+            margin-bottom: 24px;
+            opacity: 0.8;
             width: 100%;
 
-            span{
+            .level{
                 background-color: ${({ theme }) => theme.colors.text};
                 border-radius: 5px 0px 0px 5px;
                 width: 80%;
             }
-            .trackBar__Javascript{
-                width: 60%;
+            .level__javascript{
+                width: 65%;
             }
-            .trackBar__Typescript{
+            .level__typescript{
                 width: 35%;
             }
-            .trackBar__htmlCss{
+            .level__html{
                 width: 80%;
             }
+            .level__sass{
+                width: 70%;
+            }
+            .level__react{
+                width: 60%;
+            }
+            .level__git{
+                width: 40%;
+            }
+            
+        }
+        }
+        .hovertext {
+            position: relative;
+        }
+        
+        .hovertext:before {
+            border-radius: 5px;
+            content: attr(data-hover);
+            background-color: ${({theme}) => theme.colors.primary};
+            color: ${({theme}) => theme.colors.text};
+            left: 0;
+            opacity: 0;
+            padding: 5px 0;
+            position: absolute;
+            text-align: center;
+            transition: opacity 300ms ease-in-out;
+            top: 80%;
+            visibility: hidden;
+            width: 80px;
+            z-index: 1;
+        }
+        
+        .hovertext:hover:before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+    }
+    @media ${devices.mobileL}{
+        .skills{
+            margin-right: 10%;
         }
     }
+
     @media ${devices.laptop}{
         border-bottom: none;
+        margin-right: auto;
         padding-top: 48px;
+        .skills{
+            display: grid;
+            gap: 24px;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: space-between;
+            
+            .skill-item{
+                width: 85%;
+            }
+        }
     }
 `
 export default StyledTags

@@ -13,8 +13,18 @@ const StyledProfilePicture = styled.section`
         border-radius: 200px;
     }
     h2{
-        width: 60%;
-    }
+            width: 100%;
+        }
+    @media ${devices.mobileL}{
+        h2{
+            width: 80%;
+        }
+}
+@media ${devices.tablet}{
+        h2{
+            width: 60%;
+        }
+}
     @media ${devices.laptop}{
         grid-column-start: 3;
         img{

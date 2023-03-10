@@ -27,7 +27,7 @@ export default function Portfolio() {
                                     height="0"
                                     sizes="100vw"
                                     src={data.thumb}
-                                    unoptimized={true}
+                                    unoptimized
                                     width="0"
                                 />
                             </Link>

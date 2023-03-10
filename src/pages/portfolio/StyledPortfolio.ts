@@ -1,10 +1,11 @@
 import { devices } from '../../styles/breakPoints'
 import styled from 'styled-components'
 
+//--------------------------------------
 // This part is for index.tsx file
-
-export const StyledContainer = styled.main`
+export const StyledContainer = styled.section`
     margin-top: 16px;
+
     select{
         background: ${({ theme }) => theme.colors.secundary};
         border-radius: 12px;
@@ -19,26 +20,33 @@ export const StyledContainer = styled.main`
 export const StyledPortfolio = styled.section`
     display: flex;
     flex-direction: column;
+    padding: 0 ${({ theme }) => theme.fontSizes.medium};
 
     figure{
         display: grid;
         gap: 8px;
         height: auto;
         margin: 16px 0;
+        
         place-items: center;
         width: 100%;
+
         a{
-            display: grid;
-                background: radial-gradient(ellipse at top, ${({ theme }) => theme.colors.primary}, transparent),            
-                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.colors.background}, transparent);
-                height: 270px;
-                place-items: center;
-                width: 100%;
+            background: radial-gradient(ellipse at top, ${({ theme }) => theme.colors.primary}, transparent),            
+            radial-gradient(ellipse at bottom, ${({ theme }) => theme.colors.background}, transparent);
+            border-radius: 2px;
+            box-sizing: content-box;
+            flex-grow: 1;
+            height: 270px;
+            margin: 2px;
+            overflow: hidden;
+
                     img{
-                        height: 100%;
                         width: auto;
-                        max-width:100%;
-                        max-height:270px;
+                        height: 100%;
+                        min-width: 100%;
+                        object-fit: cover;
+                        transition: transform .3s;
                     }
                 .figure-link:hover img{
                     transform: scale(1.2,1.2);
@@ -89,8 +97,6 @@ export const StyledPortfolio = styled.section`
         figure{
             width: 100%;
             a{
-                background: radial-gradient(ellipse at top, ${({ theme }) => theme.colors.primary}, transparent),            
-                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.colors.background}, transparent);
                 height: 250px;
                 
                 img{
@@ -101,40 +107,57 @@ export const StyledPortfolio = styled.section`
         }
     }
 `
-
+//--------------------------------------
 // This part is for [detailsID].tsx file 
-
 export const StyledDetails = styled.section`
     
 .img-carrousel{
-    height: auto;
+    background: radial-gradient(ellipse at top, ${({ theme }) => theme.colors.primary}, transparent),            
+                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.colors.background}, transparent);
+    display: grid;
+    height: 475px;
     margin-top: 24px;
+    overflow: hidden;
+    place-items: center;
     position: relative;
     width: 100vw;
+
     img{
-        width: 100%;
+        object-fit: cover;
+        max-width: 100%;
     }
-    .button-top{
-        border: none;
-        color: ${({ theme }) => theme.colors.text};
-        opacity: 0.6;
-        height: 40px;
-        position: absolute;
-        right: 40%;
-        width: 80px;
-    }
-    .button-bottom{
-        border: none;
+    .buttons{
+        background-color: ${({ theme }) => theme.colors.primary};
         bottom: 0;
-        color: ${({ theme }) => theme.colors.text};
-        opacity: 0.6;
-        height: 40px;
+        display: flex;
         position: absolute;
+        right: 0;
+        width: 60px;
+
+        .button-top{
+            border: none;
+            opacity: 0.6;
+            height: 40px;
+            right: 42%;
+            top: 0;
+            width: 80px;
+        }
+        .button-bottom{
+            border: none;
+            bottom: 0;
+            opacity: 0.6;
+            height: 42px;
         right: 40%;
         width: 80px;
     }
-    
+    }
 }
+    .details-container{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin: 24px 0 0 48px;
+    }
 @media ${devices.tablet} {
     display: grid;
     grid-template-columns: 45% auto;
@@ -156,7 +179,6 @@ export const StyledDetails = styled.section`
 `
 
 export const StyledTech = styled.section`
-    border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -194,12 +216,7 @@ export const StyledTech = styled.section`
         }
         
     }
-    .details-container{
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        margin-top: 24px;
-    }
+    
     @media ${devices.tablet} {}
     
 `

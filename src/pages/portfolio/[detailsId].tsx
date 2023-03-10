@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { StyledDetails, StyledTech } from './StyledPortfolio'
 import Chart from '../../../public/images/chart.jpg'
+import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri'
 
 
 export default function Details() {
@@ -16,23 +17,32 @@ export default function Details() {
                 return detailsId !== data.id ? false :
                     (
                         <div className='img-carrousel' key={data.id}>
-                            <button className='button-top'>
-                                <i></i>
-                            </button>
+
                             {data.altPage.contentImages.map(img => {
                                 return (
-                                    <Image 
-                                    alt='' 
-                                    key={img.indexOf(img)}
-                                    src={img} 
-                                    unoptimized={true}
+                                    <Image
+                                        alt=''
+                                        key={img.indexOf(img)}
+                                        src={img}
+                                        unoptimized
                                     />
                                 )
                             })}
-                            <button className='button-bottom'>
-                                <i></i>
-                            </button>
+                            <div className='buttons'>
+                                <RiArrowLeftSLine className='button-top' />
+                                <RiArrowRightSLine className='button-bottom' />
+                            </div>
                         </div>
+                    )
+            })}
+            {data.map((data) => {
+                return detailsId !== data.id ? false :
+                    (
+                        <section className="details-container">
+                            <h2>{data.titulo}</h2>
+                            <p>Description: {data.altPage.textoDescricao}</p>
+                            <p>Deploy: {data.altPage.projectUrl}</p>
+                        </section>
                     )
             })}
             <StyledTech>
@@ -60,16 +70,8 @@ export default function Details() {
                         </span>
                     </div>
                 </div>
-                {data.map((data) => {
-                    return detailsId !== data.id ? false :
-                        (
-                            <section className="details-container">
-                                <h2>{data.titulo}</h2>
-                                <p>{data.altPage.textoDescricao}</p>
-                            </section>
-                        )
-                })}
             </StyledTech>
+
         </StyledDetails>
     )
 }

@@ -3,7 +3,7 @@ import BioSectionex from './BioSection'
 import InfoSection from './InfoSection'
 import { devices } from '../../styles/breakPoints'
 
-const StyledMain = styled.main`
+const StyledMain = styled.section`
   display: flex;
   flex-direction: column;
   margin: 36px 0;

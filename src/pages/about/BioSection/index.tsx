@@ -6,7 +6,6 @@ const StyledBio = styled.section`
     display: flex;
     flex-direction: column;
     gap: 45px;
-    padding: 0 48px;
     text-align: justify;
     
     .biography-section{
@@ -21,6 +20,7 @@ const StyledBio = styled.section`
         border-right: 1px solid ${({ theme }) => theme.colors.borderOpacity01};
         grid-column: 2;
         grid-row: 1;
+        padding: 0 48px;
     }
 `
 

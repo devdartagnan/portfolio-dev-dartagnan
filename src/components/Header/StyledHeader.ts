@@ -64,17 +64,13 @@ export const StyledNavMenu = styled.nav`
             gap: 24px;
             list-style: none;
             margin-bottom: 16px;
-            p{
+            .line{
                 background-color: ${props => props.theme.colors.text};
                 height: 2px;
                 margin: 1rem 0;
                 opacity: 0.6;
                 width: 50%;
             }
-        }li{
-            &:last-child{
-                padding-bottom: 16px;
-        }
         }li:hover{
             color: #f5a1a1;
         }

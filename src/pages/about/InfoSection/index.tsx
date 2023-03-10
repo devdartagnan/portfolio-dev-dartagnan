@@ -1,6 +1,8 @@
 import React from 'react'
 import { BsFillBriefcaseFill, BsFillPersonFill } from 'react-icons/bs'
 import { HiLocationMarker, HiSpeakerphone } from 'react-icons/hi'
+import { FaReact, FaHtml5, FaSass, FaGitAlt } from 'react-icons/fa'
+import { SiTypescript, SiJavascript } from 'react-icons/si'
 import PictureProfile from '@/components/Profile'
 import { StyledTags, StyledTech, StyledH1, StyledDiv } from './StyledInfoSelection'
 
@@ -12,51 +14,68 @@ export default function InfoSection() {
             <StyledDiv>
                 <StyledTags>
                     <div className='tags-cards'>
-                        <BsFillBriefcaseFill className='svg'/>
+                        <BsFillBriefcaseFill className='svg' />
                         <p className='subtitle'>Role</p>
                         <p>Front-end Developer</p>
                     </div>
                     <div className='tags-cards'>
-                        <HiLocationMarker className='svg'/>
+                        <HiLocationMarker className='svg' />
                         <p className='subtitle'>Location</p>
                         <p>Lisbon - Portugal</p>
                     </div>
                     <div className='tags-cards'>
-                        <BsFillPersonFill className='svg'/>
+                        <BsFillPersonFill className='svg' />
                         <p className='subtitle'>Age</p>
                         <p>31</p>
                     </div>
                     <div className='tags-cards'>
-                        <HiSpeakerphone className='svg'/>
+                        <HiSpeakerphone className='svg' />
                         <p className='subtitle'>Languages</p>
                         <p>Portuguese / English</p>
                     </div>
                 </StyledTags>
                 <StyledTech>
                     <h2>
-                        Tech
+                        Skills
                     </h2>
-                    <div className='tech-item'>
-                        <p className='tech-item__title'>Html/Css</p>
-                        <div className='tech-item__trackBar'>
-                            <span className='trackBar__htmlCss'>
-                            </span>
+                    <section className='skills'>
+                        <div className='skill-item hovertext' data-hover="6 / 10">
+                            <FaReact className='item__icon' />
+                            <div className='skill-item__trackBar'>
+                                <span className='level level__react'></span>
+                            </div>
                         </div>
-                    </div>
-                    <div className='tech-item'>
-                        <p className='tech-item__title'>Javascript</p>
-                        <div className='tech-item__trackBar'>
-                            <span className='trackBar__Javascript'>
-                            </span>
+                        <div className='skill-item hovertext' data-hover="8 / 10">
+                            <FaHtml5 className='item__icon' />
+                            <div className='skill-item__trackBar'>
+                                <span className='level level__html '></span>
+                            </div>
                         </div>
-                    </div>
-                    <div className='tech-item'>
-                        <p className='tech-item__title'>Typescript</p>
-                        <div className='tech-item__trackBar'>
-                            <span className='trackBar__Typescript'>
-                            </span>
+                        <div className='skill-item hovertext' data-hover="7 / 10">
+                            <FaSass className='item__icon' />
+                            <div className='skill-item__trackBar'>
+                                <span className='level level__sass' ></span>
+                            </div>
                         </div>
-                    </div>
+                        <div className='skill-item hovertext' data-hover="3.5  / 10">
+                            <SiTypescript className='item__icon' />
+                            <div className='skill-item__trackBar'>
+                                <span className='level level__typescript'></span>
+                            </div>
+                        </div>
+                        <div className='skill-item hovertext' data-hover="4 / 10">
+                            <FaGitAlt className='item__icon' />
+                            <div className='skill-item__trackBar'>
+                                <span className='level level__git'></span>
+                            </div>
+                        </div>
+                        <div className='skill-item hovertext' data-hover="6.5 / 10">
+                            <SiJavascript className='item__icon' />
+                            <div className='skill-item__trackBar'>
+                                <span className='level level__javascript'></span>
+                            </div>
+                        </div>
+                    </section>
                 </StyledTech>
             </StyledDiv>
         </>
