@@ -12,7 +12,7 @@ export default function Portfolio() {
                 <option value="Todos">Todos</option>
                 <option value="Javascript">Javascript</option>
                 <option value="Typescript">Typescript</option>
-                <option value="Sass">Sass</option>
+                <option value="Sass">React</option>
             </select>
             <StyledPortfolio>
                 {data.map((data) => {
@@ -24,11 +24,11 @@ export default function Portfolio() {
                                 <Image
                                     alt={data.altImage}
                                     blurDataURL={'none'}
-                                    height="0"
+                                    height={0}
                                     sizes="100vw"
                                     src={data.thumb}
                                     unoptimized
-                                    width="0"
+                                    width={0}
                                 />
                             </Link>
                             <p className='figure-title'>{data.titulo}</p>

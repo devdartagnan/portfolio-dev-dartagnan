@@ -22,9 +22,11 @@ export default function Details() {
                                 return (
                                     <Image
                                         alt=''
+                                        height={0}
                                         key={img.indexOf(img)}
                                         src={img}
                                         unoptimized
+                                        width={0}
                                     />
                                 )
                             })}
