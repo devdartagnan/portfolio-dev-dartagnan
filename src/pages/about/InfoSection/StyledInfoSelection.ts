@@ -16,7 +16,7 @@ export const StyledH1 = styled.h1`
     grid-row: 1;
 `
 
-export const StyledTags = styled.section`
+export const StyledTags = styled.div`
     display: grid;
     margin: 65px 0 45px 0;
     

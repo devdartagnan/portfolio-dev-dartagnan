@@ -5,11 +5,14 @@ import { GlobalStyle } from '../styles/globals';
 import { useLocalStorage } from "usehooks-ts";
 import Layout from './layout'
 import Head from 'next/head'
+import { useEffect } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
 
   const [theme] = useLocalStorage("theme_dart", darkTheme);
-
+  useEffect(() => {
+    theme
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <Head>
