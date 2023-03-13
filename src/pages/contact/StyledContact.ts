@@ -12,7 +12,7 @@ export const StyledContainer = styled.main`
             font-weight: 400;
         }
         p{
-            color: ${({ theme }) => theme.colors.textOpacity06};
+            color: ${({ theme }) => theme.palette.textColor.textOpacity06};
             font-weight: 300;
             margin-top: 8px;
         }
@@ -26,7 +26,7 @@ export const StyledContainer = styled.main`
     
         label{
             align-items: center;
-            color: ${({ theme }) => theme.colors.textOpacity06};
+            color: ${({ theme }) => theme.palette.textColor.textOpacity06};
             display: flex;
             flex-direction: column;
             font-weight: 500;
@@ -49,17 +49,17 @@ export const StyledContainer = styled.main`
             width: 80%;
         }
         button{
-            background-color: ${({ theme }) => theme.colors.textOpacity06};
+            background-color: ${({ theme }) => theme.palette.textColor.textOpacity06};
             border: none;
             border-radius: 4px;
-            color: ${({ theme }) => theme.colors.primary};
+            color: ${({ theme }) => theme.palette.colors.primary};
             height: 36px;
             margin-top: 24px;
             width: 86px;
         }
         button:hover{
-            background-color: radial-gradient(ellipse at top, ${({ theme }) => theme.colors.hover}, transparent),            
-                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.colors.hover}, transparent);;
+            background-color: radial-gradient(ellipse at top, ${({ theme }) => theme.palette.textColor.hover}, transparent),            
+                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.palette.textColor.hover}, transparent);;
         }
     }
     @media ${devices.tablet}{

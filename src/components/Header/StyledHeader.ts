@@ -34,7 +34,7 @@ export const StyledHeader = styled.header`
 
 export const StyledNavMenu = styled.nav`
         align-items: center;
-        background-color:  ${props => props.theme.colors.secundary};
+        background-color:  ${({ theme }) => theme.palette.colors.secundary};
         font-size: ${({ theme }) => theme.fontSizes.large};
         gap:16px;
         height: calc(100vh - 40px);
@@ -44,17 +44,18 @@ export const StyledNavMenu = styled.nav`
         top: 40px;
         width: 100%;
         z-index: 1;
-          
-            .container-social_midias{
+        .container-social_midias{
                 display: flex;
                 flex-direction: column;
                 gap: 8px;
                 
             .social_midias{
                 font-size: ${({ theme }) => theme.fontSizes.small};
-                color: ${({ theme }) => theme.colors.textOpacity06};
                 text-transform: uppercase;
             }
+            .social_midias:hover{
+                    color: ${({ theme }) => theme.palette.textColor.hover};
+        }
         }
         ul{
             align-self: baseline;
@@ -65,14 +66,14 @@ export const StyledNavMenu = styled.nav`
             list-style: none;
             margin-bottom: 16px;
             .line{
-                background-color: ${props => props.theme.colors.text};
+                background-color: ${props => props.theme.palette.textColor.text};
                 height: 2px;
                 margin: 1rem 0;
                 opacity: 0.6;
                 width: 50%;
             }
         }li:hover{
-            color: #f5a1a1;
+            color: ${({ theme }) => theme.palette.textColor.hover};
         }
         .themeBtn{
             align-self: flex-end;
@@ -105,14 +106,12 @@ export const StyledNavMenu = styled.nav`
             align-items: center;
             flex-direction: row;
             gap: 16px;
+
             .social_midias{
                 font-size: 12px;
                 opacity: 0.8;
                 text-transform: uppercase;
                 }
-                .social_midias:hover{
-            color: #f5a1a1;
-        }
     }
 }
     .themeBtn{
@@ -120,7 +119,7 @@ export const StyledNavMenu = styled.nav`
         margin-bottom: 10px;
         margin-left:  ${({ theme }) => theme.fontSizes.small};
 }.themeBtn:hover{
-            color: #f5a1a1;
+            color: ${({ theme }) => theme.palette.textColor.hover};
 }
 }
     `

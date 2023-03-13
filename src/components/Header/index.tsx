@@ -7,8 +7,6 @@ import Link from 'next/link'
 import SvgIcon from '@mui/material/SvgIcon'
 import { StyledHeader, StyledNavMenu } from './StyledHeader'
 
-
-
 export default function Header() {
   const [display, setDisplay] = useState('display-none')
 

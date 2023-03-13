@@ -7,10 +7,10 @@ export const StyledContainer = styled.section`
     margin-top: 16px;
 
     select{
-        background: ${({ theme }) => theme.colors.secundary};
+        background: ${({ theme }) => theme.palette.colors.secundary};
         border-radius: 12px;
         box-sizing: border-box;
-        color: ${({ theme }) => theme.colors.text};
+        color: ${({ theme }) => theme.palette.textColor.text};
         height: 32px;
         margin: 0 ${({ theme }) => theme.fontSizes.medium};
         padding:4px;
@@ -32,8 +32,8 @@ export const StyledPortfolio = styled.section`
         width: 100%;
 
         a{
-            background: radial-gradient(ellipse at top, ${({ theme }) => theme.colors.primary}, transparent),            
-            radial-gradient(ellipse at bottom, ${({ theme }) => theme.colors.background}, transparent);
+            background: radial-gradient(ellipse at top, ${({ theme }) => theme.palette.colors.primary}, transparent),            
+            radial-gradient(ellipse at bottom, ${({ theme }) => theme.palette.colors.background}, transparent);
             border-radius: 2px;
             box-sizing: content-box;
             flex-grow: 1;
@@ -52,13 +52,13 @@ export const StyledPortfolio = styled.section`
                     transform: scale(1.2,1.2);
                 }
                 .figure-title{
-                    color: ${({ theme }) => theme.colors.text};
+                    color: ${({ theme }) => theme.palette.textColor.text};
                     font-size: 16px;
                     font-weight: 600;
                     align-self: center;
                 }
                 .figure-description{
-                    color: ${({ theme }) => theme.colors.textOpacity04};
+                    color: ${({ theme }) => theme.palette.textColor.textOpacity04};
                     font-size: 14px;
                     font-weight: 400;
                 }
@@ -76,10 +76,9 @@ export const StyledPortfolio = styled.section`
         figure{
             width: 100%;
             a{
-                background: radial-gradient(ellipse at top, ${({ theme }) => theme.colors.primary}, transparent),            
-                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.colors.background}, transparent);
+                background: radial-gradient(ellipse at top, ${({ theme }) => theme.palette.colors.primary}, transparent),            
+                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.palette.colors.background}, transparent);
                 height: 250px;
-                
                 img{
                     height: 100%;
                     width: auto;
@@ -112,8 +111,8 @@ export const StyledPortfolio = styled.section`
 export const StyledDetails = styled.section`
     
 .img-carrousel{
-    background: radial-gradient(ellipse at top, ${({ theme }) => theme.colors.primary}, transparent),            
-                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.colors.background}, transparent);
+    background: radial-gradient(ellipse at top, ${({ theme }) => theme.palette.colors.primary}, transparent),            
+                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.palette.colors.background}, transparent);
     display: grid;
     height: 475px;
     margin-top: 24px;
@@ -127,7 +126,7 @@ export const StyledDetails = styled.section`
         max-width: 100%;
     }
     .buttons{
-        background-color: ${({ theme }) => theme.colors.primary};
+        background-color: ${({ theme }) => theme.palette.colors.primary};
         bottom: 0;
         display: flex;
         position: absolute;
@@ -157,6 +156,25 @@ export const StyledDetails = styled.section`
         flex-direction: column;
         gap: 16px;
         margin: 24px 0 0 48px;
+        .deploy{
+            align-items: center;
+            background: radial-gradient(ellipse at top, ${({ theme }) => theme.palette.colors.background}, transparent),            
+                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.palette.colors.primary}, transparent);
+            /* background-color:  ${({theme}) => theme.palette.colors.primary}; */
+            border-radius: 8px;
+            display: flex;
+            font-size: large;
+            font-weight: 400;
+            height: 45px;
+            justify-content: center;
+            width: 145px;
+        }
+        .deploy:hover{
+            background: radial-gradient(ellipse at top, ${({ theme }) => theme.palette.colors.primary}, transparent),            
+                            radial-gradient(ellipse at bottom, ${({ theme }) => theme.palette.colors.background}, transparent);
+            color: ${({theme}) => theme.palette.textColor.hover};
+            font-size: large;
+        }
     }
 @media ${devices.tablet} {
     display: grid;
@@ -192,7 +210,7 @@ export const StyledTech = styled.section`
         gap: 2px;
 
         .tech-item__trackBar{
-            background-color: ${({ theme }) => theme.colors.primary};
+            background-color: ${({ theme }) => theme.palette.colors.primary};
             border-radius: 5px;
             display: flex;
             height: 7px;
@@ -200,7 +218,7 @@ export const StyledTech = styled.section`
             width: 100%;
 
             span{
-                background-color: ${({ theme }) => theme.colors.text};
+                background-color: ${({ theme }) => theme.palette.textColor.text};
                 border-radius: 5px 0px 0px 5px;
                 width: 80%;
             }

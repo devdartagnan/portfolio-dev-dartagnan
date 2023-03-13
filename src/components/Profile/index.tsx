@@ -9,6 +9,7 @@ const StyledProfilePicture = styled.section`
     align-items: center;
     width: 100%;
     img{
+        object-fit: cover;
         margin: 56px 0;
         border-radius: 200px;
     }
@@ -37,10 +38,8 @@ const StyledProfilePicture = styled.section`
 export default function PictureProfile() {
     return (
         <StyledProfilePicture>
-            <Image src="/assets12.png" alt="" width='250' height={250} />
-            <h2>“
-                It is very important for me to have fresh, tasty products at hand.
-                ”</h2>
+            <Image src="/assets12.jpg" alt="" width={250} height={250} />
+            <h2>Hi, and welcome to my portfolio</h2>
         </StyledProfilePicture>
     )
 }

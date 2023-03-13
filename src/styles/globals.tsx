@@ -1,13 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { Inter } from 'next/font/google'
-import { Roboto } from 'next/font/google'
-
-const roboto = Roboto({
-  weight:  ["100" , "300" , "400" , "500" , "700" , "900"],
-  subsets: ['latin'],
-})
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -18,15 +9,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: #fff;
-    background: ${({ theme }) => theme.colors.background};
-    color: ${({ theme }) => theme.colors.text};
+    background: ${({ theme }) => theme.palette.colors.background};
+    color: ${({ theme }) => theme.palette.textColor.text};
     font-size: ${({ theme }) => theme.fontSizes.small};
-    font-family: ${inter.style.fontFamily};
+    font-family: 'inter', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6, strong {
-    font-family: ${inter.style.fontFamily};
+    font-family: 'inter', sans-serif;
     font-weight: 500;
   }
 
@@ -45,10 +35,10 @@ body {
   overflow-x: hidden;
 }
 ::-moz-selection { /* Code for Firefox */
-  color:${({ theme }) => theme.colors.hover};
+  color:${({ theme }) => theme.palette.textColor.hover};
   }
 
 ::selection {
-  color: ${({ theme }) => theme.colors.hover};
+  color: ${({ theme }) => theme.palette.textColor.hover};
   }
 `;

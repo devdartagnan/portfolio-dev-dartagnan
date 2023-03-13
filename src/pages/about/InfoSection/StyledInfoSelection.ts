@@ -1,12 +1,7 @@
 import styled from 'styled-components'
-import { Inter, Roboto } from 'next/font/google'
 import { devices } from '../../../styles/breakPoints'
 
-const roboto = Roboto({
-    weight: ["100", "300", "400", "500", "700", "900"],
-    subsets: ['latin'],
-})
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export const StyledDiv = styled.div`
     @media ${devices.tablet}{
@@ -24,8 +19,9 @@ export const StyledH1 = styled.h1`
 export const StyledTags = styled.section`
     display: grid;
     margin: 65px 0 45px 0;
-
+    
     .tags-cards{
+        color: ${props => props.theme.palette.textColor.text};
         display: flex;
         flex-direction: column;
         font-size: 15px;
@@ -33,15 +29,13 @@ export const StyledTags = styled.section`
         gap: 8px;
         margin-bottom: 28px;
         .svg{
-            color: ${({ theme }) => theme.colors.text};
             font-size: 30px;
         }
         .subtitle{
-            color: ${({ theme }) => theme.colors.text};
             font-weight: 600;
     }
         p{
-            color: ${({ theme }) => theme.colors.textOpacity06};
+            color: ${({ theme }) => theme.palette.textColor.textOpacity06};
         }
     
 }
@@ -61,7 +55,7 @@ export const StyledTags = styled.section`
 }
 `
 export const StyledTech = styled.section`
-    border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
+    border-bottom: 1px solid ${({ theme }) => theme.palette.colors.primary};
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -69,18 +63,17 @@ export const StyledTech = styled.section`
     padding-bottom: 45px;
 
     h2{
-        margin-bottom: 16px;
+        margin-top: 24px;
     }
     .skills{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         
-
         .skill-item{
             display: flex;
             flex-direction: column;
-            font-family: ${roboto.style.fontFamily};
+            font-family: 'Roboto', sans-serif;
             gap: 16px;
             width: 35%;
 
@@ -88,7 +81,7 @@ export const StyledTech = styled.section`
                 font-size: 48px;
             }
             .skill-item__trackBar{
-            background-color: ${({ theme }) => theme.colors.borderOpacity01};
+            background-color: ${({ theme }) => theme.palette.textColor.borderOpacity01};
             border-radius: 5px;
             display: flex;
             height: 7px;
@@ -97,7 +90,7 @@ export const StyledTech = styled.section`
             width: 100%;
 
             .level{
-                background-color: ${({ theme }) => theme.colors.text};
+                background-color: ${({ theme }) => theme.palette.textColor.text};
                 border-radius: 5px 0px 0px 5px;
                 width: 80%;
             }
@@ -129,8 +122,8 @@ export const StyledTech = styled.section`
         .hovertext:before {
             border-radius: 5px;
             content: attr(data-hover);
-            background-color: ${({theme}) => theme.colors.primary};
-            color: ${({theme}) => theme.colors.text};
+            background-color: ${({theme}) => theme.palette.colors.primary};
+            color: ${({theme}) => theme.palette.textColor.text};
             left: 0;
             opacity: 0;
             padding: 5px 0;

@@ -4,14 +4,13 @@
         "cardDescription": "Calculadora feita com javascipt e sass",
         "titulo": "Calculadora",
         "tag": [
-            "javascript",
-            " sass"
+            "javascript"
         ],
         "thumb": "/images/calculator.jpg",
         "altImage": "Calculadora simples",
         "altPage": {
             "contentImages": [
-                "https://i.postimg.cc/WqGdzFWr/Screenshot-from-2023-02-07-16-01-46-v1.jpg"
+                "/images/calculator.jpg"
             ],
             "projectUrl": "https://calculadora-build.vercel.app/",
             "textoDescricao": "calculadora feita utilizando as tecnologias html,sass e javascript"
@@ -23,7 +22,7 @@
         "titulo": "Paper Rock Sciscor",
         "tag": [
             "javascript",
-            " typescript"
+            "typescript"
         ],
         "thumb": "/images/scisor.jpg",
         "altImage": "Paper Rock Sciscor game",
@@ -32,7 +31,7 @@
                 "/images/scisor.jpg",
                 "/images/scisor2.jpg"
             ],
-            "projectUrl": "paper-rock-sciscor-simple-js.vercel.app",
+            "projectUrl": "https://paper-rock-sciscor-simple-js.vercel.app",
             "textoDescricao": "Paper Rock Sciscor"
         }
     },
@@ -42,7 +41,8 @@
         "titulo": "Random quotes Issac Newton",
         "tag": [
             "javascript",
-            " sass"
+            "typescript",
+            "react"
         ],
         "thumb": "/images/quote.jpg",
         "altImage": "Random quotes Issac Newton",
@@ -51,7 +51,7 @@
                 "/images/quote.jpg",
                 "/images/quotemobile.jpg"
             ],
-            "projectUrl": "random-quotes-issac-newton.vercel.app",
+            "projectUrl": "https://random-quotes-issac-newton.vercel.app",
             "textoDescricao": "Random quotes Issac Newton"
         }
     },
@@ -61,8 +61,7 @@
         "titulo": "Login",
         "tag": [
             "javascript",
-            " typescript",
-            " sass"
+            "typescript"
         ],
         "thumb": "/images/crud.jpg",
         "altImage": "Login screen",
@@ -79,8 +78,7 @@
         "cardDescription": "Card holder page, responsive, autotype",
         "titulo": "Card holder",
         "tag": [
-            "sass",
-            " typescript"
+            "typescript"
         ],
         "thumb": "/images/cardholder.jpg",
         "altImage": "Card holder page",
@@ -99,7 +97,7 @@
         "titulo": "Chart",
         "tag": [
             "javascript",
-            " typescript",
+            "typescript",
             "react"
         ],
         "thumb": "/images/chart.jpg",
@@ -119,7 +117,7 @@
         "titulo": "Alura space",
         "tag": [
             "javascript",
-            " typescript",
+            "typescript",
             "react"
         ],
         "thumb": "/images/aluraspace.jpg",
@@ -190,10 +188,3 @@
         }
     }
 ]
-
-
-
-
-
-
-

@@ -16,8 +16,8 @@ const StyledBio = styled.section`
         }
     }
     @media ${devices.laptop}{
-        border-left: 1px solid ${({ theme }) => theme.colors.borderOpacity01};
-        border-right: 1px solid ${({ theme }) => theme.colors.borderOpacity01};
+        border-left: 1px solid ${({ theme }) => theme.palette.textColor.borderOpacity01};
+        border-right: 1px solid ${({ theme }) => theme.palette.textColor.borderOpacity01};
         grid-column: 2;
         grid-row: 1;
         padding: 0 48px;
