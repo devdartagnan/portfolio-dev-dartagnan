@@ -15,23 +15,23 @@ export default function InfoSection() {
                 <StyledTags>
                     <div className='tags-cards'>
                         <BsFillBriefcaseFill className='svg' />
-                        <p className='subtitle'>Role</p>
-                        <p>Front-end Developer</p>
+                        <p className='title'>Role</p>
+                        <p className='subtitle'>Front-end Developer</p>
                     </div>
                     <div className='tags-cards'>
                         <HiLocationMarker className='svg' />
-                        <p className='subtitle'>Location</p>
-                        <p>Lisbon - Portugal</p>
+                        <p className='title'>Location</p>
+                        <p className='subtitle'>Lisbon - Portugal</p>
                     </div>
                     <div className='tags-cards'>
                         <BsFillPersonFill className='svg' />
-                        <p className='subtitle'>Age</p>
-                        <p>31</p>
+                        <p className='title'>Age</p>
+                        <p className='subtitle'>31</p>
                     </div>
                     <div className='tags-cards'>
                         <HiSpeakerphone className='svg' />
-                        <p className='subtitle'>Languages</p>
-                        <p>Portuguese / English</p>
+                        <p className='title'>Languages</p>
+                        <p className='subtitle'>Portuguese / English</p>
                     </div>
                 </StyledTags>
                 <StyledTech>

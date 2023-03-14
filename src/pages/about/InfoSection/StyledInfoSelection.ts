@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 import { devices } from '../../../styles/breakPoints'
 
-// const inter = Inter({ subsets: ['latin'] })
-
 export const StyledDiv = styled.div`
     @media ${devices.tablet}{
     grid-column: 1;
@@ -21,21 +19,20 @@ export const StyledTags = styled.div`
     margin: 65px 0 45px 0;
     
     .tags-cards{
-        color: ${props => props.theme.palette.textColor.text};
         display: flex;
         flex-direction: column;
         font-size: 15px;
         font-weight: 400;
         gap: 8px;
         margin-bottom: 28px;
-        .svg{
+        svg{
             font-size: 30px;
         }
-        .subtitle{
+        .title{
             font-weight: 600;
     }
-        p{
-            color: ${({ theme }) => theme.palette.textColor.textOpacity06};
+        .subtitle{
+            color: ${({ theme }) => theme.palette.textColor.textOpacity06} !important;
         }
     
 }

@@ -1,18 +1,17 @@
 import type { AppProps } from 'next/app'
 import { ThemeProvider } from "styled-components"
 import { darkTheme } from "../styles/themes/darkTheme";
+import { defaultTheme } from "../styles/themes/defaultTheme";
 import { GlobalStyle } from '../styles/globals';
 import { useLocalStorage } from "usehooks-ts";
 import Layout from './layout'
 import Head from 'next/head'
-import { useEffect } from 'react';
+
+
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [theme,setTheme] = useLocalStorage("theme_dart", darkTheme);
 
-  const [theme] = useLocalStorage("theme_dart", darkTheme);
-  useEffect(() => {
-    theme
-  }, []);
   return (
     <ThemeProvider theme={theme}>
       <Head>

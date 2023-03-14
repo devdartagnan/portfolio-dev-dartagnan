@@ -10,7 +10,7 @@ import { StyledHeader, StyledNavMenu } from './StyledHeader'
 export default function Header() {
   const [display, setDisplay] = useState('display-none')
 
-  const [theme, setTheme] = useLocalStorage("theme_dart", defaultTheme);
+  const [theme, setTheme] = useLocalStorage("theme_dart", darkTheme);
 
   const toggleTheme = () => {
     setTheme(theme.title === 'default' ? darkTheme : defaultTheme);

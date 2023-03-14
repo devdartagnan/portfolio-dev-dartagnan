@@ -27,12 +27,17 @@ export const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
-  
+  p{
+    color: ${({theme})=> theme.palette.textColor.text};
+  }
 html,
 body {
   height: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+}
+svg{
+  color: ${({theme})=> theme.palette.textColor.text};
 }
 ::-moz-selection { /* Code for Firefox */
   color:${({ theme }) => theme.palette.textColor.hover};

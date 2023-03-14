@@ -8,6 +8,10 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "_moduleAliases": {
+    "@root": ".",
+    "something": "src/foo"
+  },
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
@@ -25,13 +29,14 @@
     "react-icons": "^4.7.1",
     "react-switch": "^7.0.0",
     "sharp": "^0.31.3",
-    "styled-components": "^5.3.6",
     "typescript": "4.9.5",
     "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
     "babel-plugin-styled-components": "^2.0.7",
-    "sass": "^1.58.3"
+    "babel-preset-next": "^1.4.0",
+    "sass": "^1.58.3",
+    "styled-components": "^5.3.8"
   }
 }
