@@ -1,19 +1,16 @@
 import type { AppProps } from 'next/app'
-import { ThemeProvider } from "styled-components"
-import { darkTheme } from "../styles/themes/darkTheme";
-import { defaultTheme } from "../styles/themes/defaultTheme";
-import { GlobalStyle } from '../styles/globals';
-import { useLocalStorage } from "usehooks-ts";
+import { ThemeProvider } from "next-themes"
+import '../styles/global.scss';
 import Layout from './layout'
 import Head from 'next/head'
-
+import PageProvider from '@/components/PageProvider';
+import '../styles/global.scss'
 
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [theme,setTheme] = useLocalStorage("theme_dart", darkTheme);
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -27,10 +24,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:url" content="devdartagnan.com" />
         <meta property="og:image" content="/android-chrome-192x192.png" />
       </Head>
-      <Layout>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </Layout>
+      <PageProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </PageProvider>
     </ThemeProvider>
   )
 }

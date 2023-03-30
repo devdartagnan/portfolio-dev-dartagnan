@@ -4,15 +4,15 @@ import { HiLocationMarker, HiSpeakerphone } from 'react-icons/hi'
 import { FaReact, FaHtml5, FaSass, FaGitAlt } from 'react-icons/fa'
 import { SiTypescript, SiJavascript } from 'react-icons/si'
 import PictureProfile from '@/components/Profile'
-import { StyledTags, StyledTech, StyledH1, StyledDiv } from './StyledInfoSelection'
+import Styles from './InfoSelection.module.scss'
 
 export default function InfoSection() {
     return (
         <>
-            <StyledH1>Dev <br /> Dartagnan.</StyledH1>
+            <h1 className={Styles.h1}>Dev <br /> Dartagnan.</h1>
             <PictureProfile />
-            <StyledDiv>
-                <StyledTags>
+            <div className={Styles.div_card}>
+                <div className={Styles.tags}>
                     <div className='tags-cards'>
                         <BsFillBriefcaseFill className='svg' />
                         <p className='title'>Role</p>
@@ -33,8 +33,8 @@ export default function InfoSection() {
                         <p className='title'>Languages</p>
                         <p className='subtitle'>Portuguese / English</p>
                     </div>
-                </StyledTags>
-                <StyledTech>
+                </div>
+                <div className={Styles.tech}>
                     <h2>
                         Skills
                     </h2>
@@ -76,8 +76,8 @@ export default function InfoSection() {
                             </div>
                         </div>
                     </section>
-                </StyledTech>
-            </StyledDiv>
+                </div>
+            </div>
         </>
     )
 }

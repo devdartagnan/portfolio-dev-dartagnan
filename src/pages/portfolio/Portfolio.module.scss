@@ -1,0 +1,122 @@
+.container {
+  margin-top: 16px;
+
+  select {
+    background: var(--secondary);
+    border-radius: 12px;
+    box-sizing: border-box;
+    color: var(--text);
+    height: 32px;
+    margin: 0 var(--medium);
+    padding: 4px;
+  }
+
+
+  .portfolio {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--medium);
+
+    figure {
+      display: grid;
+      gap: 8px;
+      height: auto;
+      margin: 16px 0;
+
+      place-items: center;
+      width: 100%;
+
+      a {
+        background: radial-gradient(ellipse at top, var(--primary),
+            transparent),
+          radial-gradient(ellipse at bottom, var(--background),
+            transparent);
+        border-radius: 2px;
+        box-sizing: content-box;
+        flex-grow: 1;
+        height: 270px;
+        margin: 2px;
+        overflow: hidden;
+
+        img {
+          width: auto;
+          height: 100%;
+          min-width: 100%;
+          object-fit: cover;
+          transition: transform .3s;
+        }
+
+        .figure-link:hover img {
+          transform: scale(1.2, 1.2);
+        }
+
+        .figure-title {
+          color: var(--text);
+          font-size: 16px;
+          font-weight: 600;
+          align-self: center;
+        }
+
+        .figure-description {
+          color: var(--textOpacity04);
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:768px) {
+  .container {
+
+    display: grid;
+    margin: 16px 0;
+    place-items: center;
+    text-align: center;
+    gap: 48px;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    padding: 0 var(--medium);
+
+    figure {
+      width: 100%;
+
+      a {
+        background: radial-gradient(ellipse at top, var(--primary),
+            transparent),
+          radial-gradient(ellipse at bottom, var(--background),
+            transparent);
+        height: 250px;
+
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .container {
+    gap: 48px;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1660px;
+    margin: auto;
+    padding: 0 var(--medium);
+
+    figure {
+      width: 100%;
+
+      a {
+        height: 250px;
+
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+    }
+  }
+}

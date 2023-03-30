@@ -1,0 +1,18 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  margin: 36px 0;
+  padding: 0 var(--medium)
+}
+
+@media screen and (min-width:1024px) {
+  .about {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: 1fr 40% 1fr;
+    grid-template-rows: 1;
+    max-width: 1660px;
+    margin: auto;
+    padding-top: 24px;
+  }
+}

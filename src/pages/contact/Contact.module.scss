@@ -1,0 +1,136 @@
+.main {
+  display: grid;
+  place-items: center;
+  margin: 24px 0;
+  padding: 0 var(--medium);
+
+  .header-contact {
+    margin: 24px 0 60px 0;
+
+    h1 {
+      font-weight: 400;
+    }
+
+    p {
+      color: var(--textOpacity06);
+      font-weight: 300;
+      margin-top: 8px;
+    }
+  }
+}
+
+.form-contact {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: calc(100vh - 40px);
+
+  label {
+    align-items: center;
+    color: var(--textOpacity06);
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    gap: 16px;
+    text-align: left;
+    width: calc(100vw - 48px);
+  }
+
+  .textarea {
+    border: none;
+    border-radius: 4px;
+    height: 80px;
+    padding: 12px 0 0 12px;
+    width: 80%;
+  }
+
+  .input {
+    border: none;
+    border-radius: 4px;
+    height: 36px;
+    padding-left: 12px;
+    width: 80%;
+  }
+
+  button {
+    background-color: var(--textOpacity06);
+    border: none;
+    border-radius: 4px;
+    color: var(--primary);
+    height: 36px;
+    margin-top: 24px;
+    width: 86px;
+  }
+
+  button:hover {
+    background-color: radial-gradient(ellipse at top, var(--primary),
+        transparent),
+      radial-gradient(ellipse at bottom, var(--secondary),
+        transparent);
+  }
+}
+
+
+@media screen and (min-width:768px) {
+  .main {
+    display: grid;
+    grid-template-columns: 40% auto;
+    max-width: 1660px;
+    margin: auto;
+
+    .header-contact {
+      align-self: flex-start;
+
+      h1 {
+        font-size: 36px;
+        margin-top: 24px;
+      }
+
+      p {
+        font-size: var(--small);
+      }
+    }
+
+    .form-contact {
+      margin-top: 48px;
+      width: 100%;
+
+      label {
+        width: 100%;
+      }
+
+      .textarea {
+        background-color: var(--primary);
+        font-size: 16px;
+        height: 160px;
+        padding: 12px 0 0 12px;
+        text-transform: capitalize;
+        width: 50%;
+      }
+
+      .input {
+        background-color: var(--primary);
+        font-size: 16px;
+        height: 36px;
+        padding-left: 12px;
+        width: 50%;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width:1024px) {
+  .header-contact {
+    align-self: flex-start;
+
+    h1 {
+      font-size: 56px;
+    }
+
+    p {
+      font-size: var(--medium);
+    }
+  }
+}

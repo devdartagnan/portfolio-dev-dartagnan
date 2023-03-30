@@ -2,19 +2,19 @@ import React from 'react'
 import data from '../../api/data.json'
 import Link from 'next/link'
 import Image from 'next/image'
-import { StyledContainer, StyledPortfolio } from './StyledPortfolio'
+import styles from './Portfolio.module.scss'
 
 export default function Portfolio() {
 
     return (
-        <StyledContainer>
+        <section className={styles.container}>
             <select name="" id="">
                 <option value="Todos">Todos</option>
                 <option value="Javascript">Javascript</option>
                 <option value="Typescript">Typescript</option>
                 <option value="Sass">React</option>
             </select>
-            <StyledPortfolio>
+            <div className={styles.portfolio}>
                 {data.map((data) => {
                     return (
                         <figure key={data.id}>
@@ -36,7 +36,13 @@ export default function Portfolio() {
                         </figure>
                     )
                 })}
-            </StyledPortfolio>
-        </StyledContainer>
+            </div>
+        </section>
     )
 }
+
+
+
+
+//--------------------------------------
+// This part is for index.tsx file

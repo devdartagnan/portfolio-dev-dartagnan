@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "start:out": "npx http-server .out -p 3000"
   },
   "_moduleAliases": {
     "@root": ".",
@@ -14,9 +15,9 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.11",
-    "@mui/material": "^5.11.11",
+    "@mui/material": "^5.11.15",
+    "@mui/styled-engine-sc": "^5.11.11",
     "@types/node": "18.14.2",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
@@ -24,6 +25,7 @@
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
     "next": "13.2.3",
+    "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
@@ -33,10 +35,6 @@
     "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26",
-    "babel-plugin-styled-components": "^2.0.7",
-    "babel-preset-next": "^1.4.0",
-    "sass": "^1.58.3",
-    "styled-components": "^5.3.8"
+    "sass": "^1.58.3"
   }
 }

@@ -1,4 +1,5 @@
 import Header from '../components/Header'
+import { darkTheme } from "../styles/themes/darkTheme";
 
 type DashboardLayoutProps = {
     children: React.ReactNode,
@@ -7,7 +8,7 @@ type DashboardLayoutProps = {
 export default function Layout({ children }: DashboardLayoutProps) {
     return (
         <>
-            <Header />
+            <Header/>
             <main>{children}</main>
         </>
     )

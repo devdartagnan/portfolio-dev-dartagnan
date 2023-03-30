@@ -1,32 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
-import { devices } from '../../../styles/breakPoints'
+import Styles from './BioSection.module.scss'
 
-const StyledBio = styled.section`
-    display: flex;
-    flex-direction: column;
-    gap: 45px;
-    text-align: justify;
-    
-    .biography-section{
-        display: grid;
-        gap: 18px;
-        ul{
-            padding-left: 1rem;
-        }
-    }
-    @media ${devices.laptop}{
-        border-left: 1px solid ${({ theme }) => theme.palette.textColor.borderOpacity01};
-        border-right: 1px solid ${({ theme }) => theme.palette.textColor.borderOpacity01};
-        grid-column: 2;
-        grid-row: 1;
-        padding: 0 48px;
-    }
-`
 
 export default function BioSectionex() {
     return (
-        <StyledBio>
+        <section className={Styles.bio}>
             <div className='biography-section'>
                 <h2>Biography</h2>
                 <p>Alma and her husband have 2 kids:
@@ -53,6 +31,6 @@ export default function BioSectionex() {
                     Alma need to find flexible solution that can help her to optimize her time while dedicating herself to her carreer, kids and making sure to maintain a health lifestyle.
                 </p>
             </div>
-        </StyledBio>
+        </section>
     )
 }
