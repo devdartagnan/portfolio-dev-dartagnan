@@ -31,6 +31,7 @@
             transparent);
         border-radius: 2px;
         box-sizing: content-box;
+        display: flex;
         flex-grow: 1;
         height: 270px;
         margin: 2px;
@@ -55,7 +56,7 @@
           align-self: center;
         }
 
-        .figure-description {
+        .figure-subtitle {
           color: var(--textOpacity04);
           font-size: 14px;
           font-weight: 400;
@@ -76,16 +77,20 @@
       justify-self: baseline;
     }
 
-    .sub-container {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      .portfolio-profile {
-        width: auto;
-      }
+    .portfolio {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1%;
+      justify-content: space-evenly;
+      max-width: 1600px;
+      width: calc(100vw - 96px);
 
       .figure {
-        width: 100%;
+        align-items: flex-start;
+        background-color: var(--secondary);
+        border-radius: 5px;
+        display: flex;
+        max-width: 80%;
 
         a {
           background: radial-gradient(ellipse at top, var(--primary),
@@ -98,6 +103,10 @@
             height: 100%;
             width: auto;
           }
+        }
+        .description{
+          min-width: 220px;
+          width: auto;
         }
       }
     }
@@ -113,16 +122,25 @@
     .portfolio {
 
       .figure {
-        max-width: 380px;
-        width: 600px;
+        max-width: 480px;
+        text-align: left;
 
         a {
           height: 250px;
+        }
 
-          img {
-            height: 100%;
-            width: auto;
-          }
+        div {
+          width: 220px;
+        }
+        
+        .figure-title {
+          color: var(--text);
+          font-weight: 600;
+          padding: 1rem 0;
+        }
+
+        .figure-subtitle {
+          color: var(--text);
         }
       }
     }

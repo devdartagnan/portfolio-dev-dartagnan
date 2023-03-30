@@ -3,7 +3,6 @@ import data from '../../api/data.json'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Portfolio.module.scss'
-import PictureProfile from '@/components/Profile'
 
 export default function Portfolio() {
 
@@ -15,7 +14,6 @@ export default function Portfolio() {
         <option value="Typescript">Typescript</option>
         <option value="Sass">React</option>
       </select>
-      <section className={styles['sub-container']}>
         <div className={styles.portfolio}>
           {data.map((data) => {
             return (
@@ -33,14 +31,14 @@ export default function Portfolio() {
                     width={0}
                   />
                 </Link>
-                <p className={styles['figure-title']}>{data.titulo}</p>
-                <p className={styles['figure-description']}>{data.cardDescription}</p>
+                <div className={styles.description}>
+                  <p className={styles['figure-title']}>{data.titulo}</p>
+                  <p className={styles['figure-subtitle']}>{data.cardDescription}</p>
+                </div>
               </figure>
             )
           })}
         </div>
-        <PictureProfile className={styles['portfolio-profile']} />
-      </section>
     </section>
   )
 }
