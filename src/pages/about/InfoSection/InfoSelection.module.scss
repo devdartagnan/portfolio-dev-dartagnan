@@ -22,11 +22,11 @@
     }
 
     .title {
+      color: var(--textOpacity06);
       font-weight: 600;
     }
 
     .subtitle {
-      color: var(--textOpacity06);
     }
   }
 }
@@ -163,7 +163,7 @@
   .tech {
     border-bottom: none;
     margin-right: auto;
-    padding-top: 48px;
+    padding-top: 24px;
 
     .skills {
       display: grid;

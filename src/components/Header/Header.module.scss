@@ -5,7 +5,6 @@
   place-items: center;
   padding: 0 24px;
   position: relative;
-  width: 100%;
 
   .nav {
     align-items: center;
@@ -20,16 +19,6 @@
     width: 100%;
     z-index: 1;
 
-    .container-social_midias {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-
-      .social_midias {
-        font-size: var(--small);
-        text-transform: uppercase;
-      }
-    }
 
     .ul {
       align-self: baseline;
@@ -51,6 +40,18 @@
         opacity: 0.6;
         width: 50%;
       }
+
+      .container-social_midias {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .social_midias {
+          font-size: var(--small);
+          text-transform: uppercase;
+        }
+      }
+
     }
 
     .themeBtn {
@@ -140,9 +141,11 @@
   .header {
     .nav {
       padding: 0 0 3rem 0;
-      .ul{
+
+      .ul {
         margin-bottom: 0;
       }
+
       .themeBtn {
         margin-bottom: 0;
       }

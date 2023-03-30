@@ -39,6 +39,7 @@ html[data-theme='dark'] {
   --medium: 24px;
   --large: 48px;
 }
+
 * {
   font-family: 'inter',
     sans-serif;
@@ -48,7 +49,8 @@ html[data-theme='dark'] {
 }
 
 body {
-  background: var(--color-background);
+  background: var(--background);
+  color: var(--text);
   font-size: var(--text-small);
 }
 

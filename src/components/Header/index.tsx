@@ -9,7 +9,7 @@ import { useTheme } from 'next-themes';
 export default function Header() {
   const [display, setDisplay] = useState('display-none')
   const { theme, setTheme, resolvedTheme } = useTheme()
-
+  const [overFlow, setOverFlow] = useState(false)
   function toggleNavMenu() {
     display === 'display-none' ? setDisplay('display-flex') : setDisplay('display-none')
   }
