@@ -56,7 +56,7 @@ export async function getStaticProps(context: any) {
 export default function Details(props: Props) {
   return (
     <section className={styles.details}>
-      <div className='img-carrousel' key={props.id}>
+      <div className={styles['img-carrousel']} key={props.id}>
         {props.altPage.contentImages.map(img => {
           return (
             <Image
@@ -69,15 +69,15 @@ export default function Details(props: Props) {
             />
           )
         })}
-        <div className='buttons'>
-          <RiArrowLeftSLine className='button-top' />
-          <RiArrowRightSLine className='button-bottom' />
+        <div className={styles.buttons}>
+          <RiArrowLeftSLine className={styles['button-top']} />
+          <RiArrowRightSLine className={styles['button-bottom']} />
         </div>
       </div>
-      <section className="details-container">
+      <section className={styles["details-container"]}>
         <h2>{props.titulo}</h2>
         <p>Description: {props.altPage.textoDescricao}</p>
-        <Link href={props.altPage.projectUrl} className='deploy'>
+        <Link href={props.altPage.projectUrl} className={styles.deploy}>
           Visit the site
         </Link>
       </section>

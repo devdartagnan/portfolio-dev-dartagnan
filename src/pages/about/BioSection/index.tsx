@@ -5,7 +5,7 @@ import Styles from './BioSection.module.scss'
 export default function BioSectionex() {
     return (
         <section className={Styles.bio}>
-            <div className='biography-section'>
+            <div className={Styles['biography-section']}>
                 <h2>Biography</h2>
                 <p>Alma and her husband have 2 kids:
                     a teenager and a 9-year-old. Now they can focus more
@@ -17,7 +17,7 @@ export default function BioSectionex() {
                     use avocados in her diet.Interested in gardening.
                 </p>
             </div>
-            <div className='biography-section needs'>
+            <div className={Styles['biography-section']}>
                 <h2>Needs</h2>
                 <ul>
                     <li>Be ready for holiday family gathering as well as for light dinner during the day.</li>
