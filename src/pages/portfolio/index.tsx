@@ -32,7 +32,7 @@ export default function Portfolio() {
                   />
                 </Link>
                 <div className={styles.description}>
-                  <p className={styles['figure-title']}>{data.titulo}</p>
+                  <h3 className={styles['figure-title']}>{data.titulo}</h3>
                   <p className={styles['figure-subtitle']}>{data.cardDescription}</p>
                 </div>
               </figure>

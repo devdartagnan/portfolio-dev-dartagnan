@@ -17,12 +17,31 @@
     padding: 0 var(--medium);
 
     .figure {
+      box-shadow: 4px 4px 10px var(--box-shadow);
       display: grid;
       gap: 8px;
       height: auto;
       margin: 16px 0;
       place-items: center;
+      position: relative;
       width: 100%;
+
+      .description {
+        h3 {
+          border-bottom: 1px solid var(--line-opacity);
+          font-family: 'Roboto', sans-serif;
+          font-size: 18px;
+          font-weight: 700;
+          padding: 0 0 0.45rem 0;
+          margin: 0.45rem 0;
+        }
+
+        p {
+          font-family: 'Inter', sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
 
       a {
         background: radial-gradient(ellipse at top, var(--primary),
@@ -43,10 +62,6 @@
           min-width: 100%;
           object-fit: cover;
           transition: transform .3s;
-        }
-
-        .figure-link:hover img {
-          transform: scale(1.2, 1.2);
         }
 
         .figure-title {
@@ -91,21 +106,18 @@
         border-radius: 5px;
         display: flex;
         max-width: 80%;
+        overflow: hidden;
 
-        a {
-          background: radial-gradient(ellipse at top, var(--primary),
-              transparent),
-            radial-gradient(ellipse at bottom, var(--background),
-              transparent);
-          height: 250px;
-
-          img {
-            height: 100%;
-            width: auto;
-          }
+        img {
+          height: 100%;
+          width: auto;
         }
-        .description{
+
+
+        .description {
+          box-sizing: border-box;
           min-width: 220px;
+          padding: 1rem 0 0 1rem;
           width: auto;
         }
       }
@@ -125,14 +137,17 @@
         max-width: 480px;
         text-align: left;
 
-        a {
-          height: 250px;
+        .description {
+          background-color: var(--background);
+          height: 80%;
+          left: 0;
+          position: absolute;
+          transition: all 0.3s ease-out;
+          transform: translateX(170%);
+          top: 10%;
+          width: 60%;
         }
 
-        div {
-          width: 220px;
-        }
-        
         .figure-title {
           color: var(--text);
           font-weight: 600;
@@ -142,6 +157,15 @@
         .figure-subtitle {
           color: var(--text);
         }
+      }
+
+      .figure:hover .description {
+        box-shadow: 0 5px 20px 5px #2222228a;
+        transform: translateX(60%);
+      }
+      .figure:active .description {
+        box-shadow: 0 5px 20px 5px #2222228a;
+        transform: translateX(60%);
       }
     }
   }
