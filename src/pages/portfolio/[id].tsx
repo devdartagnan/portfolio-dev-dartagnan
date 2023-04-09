@@ -1,14 +1,18 @@
 import React from 'react'
-import data from '../../api/data.json'
+import { Data } from './index'
 import Image from 'next/image'
 import Link from 'next/link'
 import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri'
 import { FaReact } from 'react-icons/fa'
 import { SiTypescript, SiJavascript } from 'react-icons/si'
 import styles from './Ids.module.scss'
+import { useRouter } from 'next/router'
+
+
 
 interface Props {
   id: string,
+  data: string,
   cardDescription: string,
   titulo: string,
   tag: [string],
@@ -21,43 +25,25 @@ interface Props {
   }
 }
 
-const paths = data.map((listOfData) => {
-  return { params: { id: `${listOfData.id}` } }
-})
+export async function getServerSideProps() {
+  const res = await fetch(`https://devdartagnan.github.io/api/data.json`)
+  const data = await res.json()
 
-export async function getStaticPaths() {
-  return {
-    paths: paths,
-    fallback: false, // can also be true or 'blocking'
-  }
+
+  return { props: { data } }
 }
-export async function getStaticProps(context: any) {
-  const id = context.params.id
-  const pageDetails = data.find((element) => {
+
+export default function Details({ data }: any) {
+  const router = useRouter()
+  const id = router.query.id
+  const project = data.find((element: any) => {
     return element.id === id ? true : false
   })
 
-  return {
-    props: {
-      id: pageDetails?.id,
-      cardDescription: pageDetails?.cardDescription,
-      titulo: pageDetails?.titulo,
-      tag: pageDetails?.tag,
-      thumb: pageDetails?.thumb,
-      altImage: pageDetails?.altImage,
-      altPage: {
-        contentImages: pageDetails?.altPage.contentImages,
-        projectUrl: pageDetails?.altPage.projectUrl,
-        textoDescricao: pageDetails?.altPage.textoDescricao
-      }
-    }
-  }
-}
-export default function Details(props: Props) {
   return (
     <section className={styles.details}>
-      <div className={styles['img-carrousel']} key={props.id}>
-        {props.altPage.contentImages.map(img => {
+      <div className={styles['img-carrousel']} key={project.id}>
+        {project.altPage.contentImages.map((img: string) => {
           return (
             <Image
               alt=''
@@ -75,9 +61,9 @@ export default function Details(props: Props) {
         </div>
       </div>
       <section className={styles["details-container"]}>
-        <h2>{props.titulo}</h2>
-        <p>Description: {props.altPage.textoDescricao}</p>
-        <Link href={props.altPage.projectUrl} className={styles.deploy}>
+        <h2>{project.titulo}</h2>
+        <p>Description: {project.altPage.textoDescricao}</p>
+        <Link href={project.altPage.projectUrl} className={styles.deploy}>
           Visit the site
         </Link>
       </section>
@@ -86,9 +72,9 @@ export default function Details(props: Props) {
           Techology
         </h2>
         <div>
-          {props.tag.includes('javascript') ? <SiJavascript /> : void (0)}
-          {props.tag.includes('typescript') ? <SiTypescript /> : void (0)}
-          {props.tag.includes('react') ? <FaReact /> : void (0)}
+          {project.tag.includes('javascript') ? <SiJavascript /> : void (0)}
+          {project.tag.includes('typescript') ? <SiTypescript /> : void (0)}
+          {project.tag.includes('react') ? <FaReact /> : void (0)}
         </div>
       </div>
     </section>
