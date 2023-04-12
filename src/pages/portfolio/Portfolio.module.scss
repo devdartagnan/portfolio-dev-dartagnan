@@ -1,3 +1,5 @@
+@use '@material/image-list/mdc-image-list';
+
 .container {
   margin-top: 16px;
 
@@ -16,68 +18,6 @@
     flex-direction: column;
     padding: 0 var(--medium);
 
-    .figure {
-      box-shadow: 4px 4px 10px var(--box-shadow);
-      display: grid;
-      gap: 8px;
-      height: auto;
-      margin: 16px 0;
-      place-items: center;
-      position: relative;
-      width: 100%;
-
-      .description {
-        h3 {
-          border-bottom: 1px solid var(--line-opacity);
-          font-family: 'Roboto', sans-serif;
-          font-size: 18px;
-          font-weight: 700;
-          padding: 0 0 0.45rem 0;
-          margin: 0.45rem 0;
-        }
-
-        p {
-          font-family: 'Inter', sans-serif;
-          font-size: 16px;
-          font-weight: 400;
-        }
-      }
-
-      a {
-        background: radial-gradient(ellipse at top, var(--primary),
-            transparent),
-          radial-gradient(ellipse at bottom, var(--background),
-            transparent);
-        border-radius: 2px;
-        box-sizing: content-box;
-        display: flex;
-        flex-grow: 1;
-        height: 270px;
-        margin: 2px;
-        overflow: hidden;
-
-        img {
-          width: auto;
-          height: 100%;
-          min-width: 100%;
-          object-fit: cover;
-          transition: transform .3s;
-        }
-
-        .figure-title {
-          color: var(--text);
-          font-size: 16px;
-          font-weight: 600;
-          align-self: center;
-        }
-
-        .figure-subtitle {
-          color: var(--textOpacity04);
-          font-size: 14px;
-          font-weight: 400;
-        }
-      }
-    }
   }
 }
 
@@ -88,41 +28,110 @@
     text-align: center;
     padding: 0 var(--medium);
 
-    select {
-      justify-self: baseline;
+    .filter-inputs {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1400px;
+      width: 100%;
+
+      select {
+        justify-self: baseline;
+      }
+
+      .displayIcons {
+        display: flex;
+        font-size: var(--medium);
+        gap: var(--small);
+        position: relative;
+
+        .displayGrid {
+          cursor: pointer;
+        }
+
+        .displayFull {
+          cursor: pointer;
+        }
+      }
     }
 
     .portfolio {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 1%;
-      justify-content: space-evenly;
+      align-items: center;
+      box-sizing: border-box;
+      display: grid;
+      gap: 46px;
+      grid-template-columns: 300px auto;
+      height: 500px;
+      margin: auto;
       max-width: 1600px;
+      place-items: center;
       width: calc(100vw - 96px);
 
-      .figure {
-        align-items: flex-start;
-        background-color: var(--secondary);
-        border-radius: 5px;
-        display: flex;
-        max-width: 80%;
-        overflow: hidden;
+      .description {
+        box-sizing: border-box;
+        min-width: 220px;
+        padding: 1rem 0 0 1rem;
+        width: auto;
+      }
 
-        img {
-          height: 100%;
-          width: auto;
+      .gallery {
+        // margin: 0 auto;
+        height: calc(100vh - 300px);
+        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        // max-width: '1000px';
+        width: 100%;
+        position: relative;
+
+        .arrows {
+          display: flex;
+          flex-direction: column;
+          height: calc(100vh - 300px);
+          justify-content: space-between;
+          left: 200px;
+          position: fixed;
+
+          .arrow-up {
+            font-size: var(--large);
+            transform: rotate(90deg);
+          }
+          .arrow-down {
+            font-size: var(--large);
+            transform: rotate(270deg);
+          }
         }
 
+        ul {
+          column-count: 2;
+          column-gap: 16px;
+          list-style: none;
+          max-width: 1000px;
+          width: 100%;
+          
 
-        .description {
-          box-sizing: border-box;
-          min-width: 220px;
-          padding: 1rem 0 0 1rem;
-          width: auto;
+          .gallery-item {
+            cursor: pointer;
+            margin-bottom: 16px;
+            flex: none;
+
+            .gallery-content {
+              height: fit-content;
+              vertical-align: bottom;
+              width: 100%;
+            }
+
+            .gallery-content:hover {
+              opacity: 0.75;
+            }
+          }
         }
       }
     }
   }
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and (min-width:1024px) {
@@ -164,6 +173,7 @@
         box-shadow: 0 5px 20px 5px #2222228a;
         transform: translateX(60%);
       }
+
       .figure:active .description {
         box-shadow: 0 5px 20px 5px #2222228a;
         transform: translateX(60%);

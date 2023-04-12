@@ -1,0 +1,28 @@
+.aside-description {
+  display: flex;
+  flex-direction: column;
+  height: 60%;
+  justify-content: space-between;
+  text-align: left;
+  width: 100%;
+
+  .aside-description__body-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--small);
+
+    .aside-description__title {
+      font-weight: 700;
+    }
+  }
+
+  .aside-description__button {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 4px;
+    color: var(--text);
+    height: 40px;
+    justify-self: right;
+    width: 120px;
+  }
+}

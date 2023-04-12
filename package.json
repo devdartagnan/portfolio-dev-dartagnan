@@ -7,7 +7,7 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "format":"prettier --write \"src/**/*,{.tsx,.jsx}\"",
+    "format": "prettier --write \"src/**/*,{.tsx,.jsx}\"",
     "start:out": "npx http-server .out -p 3000"
   },
   "_moduleAliases": {
@@ -16,26 +16,35 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.11",
+    "@mui/lab": "^5.0.0-alpha.126",
     "@mui/material": "^5.11.15",
     "@mui/styled-engine-sc": "^5.11.11",
+    "@rmwc/image-list": "^8.0.7",
     "@types/node": "18.14.2",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "bootstrap": "^5.2.3",
     "classnames": "^2.3.2",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.3",
+    "macy": "^2.5.1",
     "next": "13.2.3",
+    "next-gallery": "^1.2.1",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
+    "react-bootstrap": "^2.7.2",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
+    "react-image-gallery": "^1.2.11",
     "react-switch": "^7.0.0",
     "sharp": "^0.31.3",
     "typescript": "4.9.5",
     "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
+    "@types/react-image-gallery": "^1.2.0",
     "sass": "^1.58.3"
   }
 }

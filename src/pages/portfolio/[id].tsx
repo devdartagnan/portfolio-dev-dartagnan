@@ -36,12 +36,12 @@ export async function getServerSideProps() {
 export default function Details({ data }: any) {
   const router = useRouter()
   const id = router.query.id
-  const project = data.find((element: any) => {
+  const project = data.find((element: Props) => {
     return element.id === id ? true : false
   })
 
   return (
-    <section className={styles.details}>
+    <section className={styles.details} >
       <div className={styles['img-carrousel']} key={project.id}>
         {project.altPage.contentImages.map((img: string) => {
           return (
@@ -77,7 +77,7 @@ export default function Details({ data }: any) {
           {project.tag.includes('react') ? <FaReact /> : void (0)}
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 
