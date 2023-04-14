@@ -23,7 +23,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:url" content="devdartagnan.com" />
         <meta property="og:image" content="/android-chrome-192x192.png" />
         <title>DevDartagnan | Front-end Developer.</title>
-        <script src="assets/js/macy.min.js"></script>
       </Head>
       <PageProvider>
         <Layout>

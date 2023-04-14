@@ -7,8 +7,7 @@
     "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"src/**/*,{.tsx,.jsx}\"",
-    "start:out": "npx http-server .out -p 3000"
+    "format": "prettier --write \"src/**/*,{.tsx,.jsx}\""
   },
   "_moduleAliases": {
     "@root": ".",

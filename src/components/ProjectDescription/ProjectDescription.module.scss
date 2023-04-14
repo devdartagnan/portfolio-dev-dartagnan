@@ -1,8 +1,9 @@
 .aside-description {
   display: flex;
   flex-direction: column;
-  height: 60%;
+  height: 80%;
   justify-content: space-between;
+  max-height: 600px;
   text-align: left;
   width: 100%;
 
@@ -17,12 +18,17 @@
   }
 
   .aside-description__button {
-    background-color: var(--primary);
+    background-color: var(--borderOpacity01);
     border: none;
     border-radius: 4px;
     color: var(--text);
     height: 40px;
     justify-self: right;
     width: 120px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .aside-description{
+    display: none;
   }
 }

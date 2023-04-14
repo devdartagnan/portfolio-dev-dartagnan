@@ -31,7 +31,7 @@ export default function Description({ info }: Props) {
         <h4>Tecnologias</h4>
         <p>{info.tag}</p>
       </div>
-      <Link href={info.altPage.projectUrl}>
+      <Link href={info.altPage.projectUrl} target='_blank'>
         <button className={styles['aside-description__button']} type='button' >Projeto</button>
       </Link>
     </aside >

@@ -10,10 +10,8 @@ interface Props {
     thumbnailClass: string;
     originalClass : string;
   }[];
-  setLink?: React.Dispatch<React.SetStateAction<number>> | any
-  setCurrent: () => void
 }
-export default function GalleryPortfolio({ images, additionalClass, setLink, setCurrent }: Props) {
+export default function GalleryPortfolio({ images, additionalClass }: Props) {
 
   return (
     <ImageGallery
@@ -21,10 +19,6 @@ export default function GalleryPortfolio({ images, additionalClass, setLink, set
       showThumbnails={true}
       thumbnailPosition={'right'}
       additionalClass={additionalClass}
-      onSlide={(index) => {
-        setCurrent()
-        setLink(index+1)
-      }}
       showPlayButton={false}
       showFullscreenButton={false}
     />

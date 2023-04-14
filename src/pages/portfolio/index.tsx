@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from './Portfolio.module.scss'
-import { CgDisplayGrid, CgDisplayFullwidth } from 'react-icons/cg'
 import Description from '@/components/ProjectDescription'
 import { ImageList, ImageListItem, ImageListImage } from "@rmwc/image-list";
-import { MdOutlineArrowBackIosNew } from 'react-icons/md'
 
 export interface Data {
   data: [{
@@ -36,21 +34,23 @@ export async function getServerSideProps() {
 export default function Portfolio({ data }: Data) {
   const dataInicial = data[0]
   const [actualObject, setActualObject] = useState(dataInicial)
-
+  const [filterValue, setFilterValue] = useState('*')
+  const tagFilter = data.filter((item) => {
+    return item.tag.find(value => value === filterValue ? item : false)
+  })
+  const [width, setWidth] = useState(window.innerWidth)
+  console.log(width)
   return (
     <section className={styles.container}>
       <div className={styles['filter-inputs']}>
-        <select name="" id="">
-          <option value="Todos">Todos</option>
-          <option value="Javascript">Javascript</option>
-          <option value="Typescript">Typescript</option>
-          <option value="Sass">React</option>
+        <select name="" id="" onChange={(value) => {
+          setFilterValue(value.target.value)
+        }}>
+          <option value="*">Todos</option>
+          <option value="javascript">Javascript</option>
+          <option value="typescript">Typescript</option>
+          <option value="react">React</option>
         </select>
-        <div className={styles.displayIcons}>
-          <input type="checkbox" name="" id="" className={styles['displayIcons__checkbox']} />
-          <CgDisplayGrid className={styles.displayGrid} onClick={() => { }} />
-          <CgDisplayFullwidth className={styles.displayFull} />
-        </div>
       </div>
       <div className={styles.portfolio}>
         <Description info={actualObject} />
@@ -58,34 +58,28 @@ export default function Portfolio({ data }: Data) {
           className={styles.gallery}
           id="gallery"
         >
-          <div className={styles.arrows}>
-            <MdOutlineArrowBackIosNew
-              className={styles['arrow-up']}
-            />
-            <MdOutlineArrowBackIosNew
-              className={styles['arrow-down']}
-            />
-          </div>
           <ImageList
             masonry
           >
-            {data.map((item) => {
+            {tagFilter.map((item) => {
               return (
-                <ImageListItem key={item.id} className={styles['gallery-item']}>
-                  <ImageListImage
-                    src={item.thumb}
-                    alt={item.altImage}
-                    className={styles['gallery-content']}
-                    onClick={
-                      () => { setActualObject(item) }
-                    }
-                  />
-                </ImageListItem>
+                <a className={styles['gallery-a']} href={width <= 768 ? `/portfolio/${item.id}`: ''}>
+                  <ImageListItem key={item.id} className={styles['gallery-item']}>
+                    <ImageListImage
+                      src={item.thumb}
+                      alt={item.altImage}
+                      className={styles['gallery-content']}
+                      onClick={
+                        () => { setActualObject(item) }
+                      }
+                    />
+                  </ImageListItem>
+                </a>
               )
             })}
           </ImageList>
         </div>
       </div>
-    </section>
+    </section >
   )
 }
