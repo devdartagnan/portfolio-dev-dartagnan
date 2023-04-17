@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from './Portfolio.module.scss'
 import Description from '@/components/ProjectDescription'
 import { ImageList, ImageListItem, ImageListImage } from "@rmwc/image-list";
+import Link from "next/link";
 
 export interface Data {
   data: [{
@@ -30,6 +31,22 @@ export async function getServerSideProps() {
 
   return { props: { data } }
 }
+function updateLastSeen() {
+  const lastWidth: string = window.innerWidth.toString()
+  return lastWidth;
+}
+
+function useLastSeen() {
+  const [lastSeen, setLastSeen] = useState('');
+  const retrieved = useRef(false); //To get around strict mode running the hook twice
+  useEffect(() => {
+    if (retrieved.current) return;
+    retrieved.current = true;
+    setLastSeen(updateLastSeen());
+  }, []);
+
+  return lastSeen;
+}
 
 export default function Portfolio({ data }: Data) {
   const dataInicial = data[0]
@@ -38,8 +55,8 @@ export default function Portfolio({ data }: Data) {
   const tagFilter = data.filter((item) => {
     return item.tag.find(value => value === filterValue ? item : false)
   })
-  const [width, setWidth] = useState(window.innerWidth)
-  console.log(width)
+  const lastWidth = parseInt(useLastSeen())
+  
   return (
     <section className={styles.container}>
       <div className={styles['filter-inputs']}>
@@ -62,9 +79,9 @@ export default function Portfolio({ data }: Data) {
             masonry
           >
             {tagFilter.map((item) => {
-              return (
-                <a className={styles['gallery-a']} href={width <= 768 ? `/portfolio/${item.id}`: ''}>
-                  <ImageListItem key={item.id} className={styles['gallery-item']}>
+              return lastWidth <= 768 ? (
+                <ImageListItem key={item.id} className={styles['gallery-item']}>
+                  <Link className={styles['gallery-a']} href={`/portfolio/${item.id}`}>
                     <ImageListImage
                       src={item.thumb}
                       alt={item.altImage}
@@ -73,8 +90,19 @@ export default function Portfolio({ data }: Data) {
                         () => { setActualObject(item) }
                       }
                     />
-                  </ImageListItem>
-                </a>
+                  </Link>
+                </ImageListItem>
+              ) : (
+                <ImageListItem key={item.id} className={styles['gallery-item']}>
+                  <ImageListImage
+                    src={item.thumb}
+                    alt={item.altImage}
+                    className={styles['gallery-content']}
+                    onClick={
+                      () => { setActualObject(item) }
+                    }
+                  />
+                </ImageListItem>
               )
             })}
           </ImageList>
@@ -83,3 +111,4 @@ export default function Portfolio({ data }: Data) {
     </section >
   )
 }
+

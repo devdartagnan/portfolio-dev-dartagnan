@@ -67,7 +67,7 @@
       }
 
       .gallery {
-        height: calc(100vh - 300px);
+        height: calc(100vh - 162px);
         overflow: scroll;
         overflow-y: scroll;
         overflow-x: hidden;
@@ -86,7 +86,7 @@
             cursor: pointer;
             margin-bottom: 16px;
             flex: none;
-
+            
             .gallery-content {
               height: fit-content;
               vertical-align: bottom;

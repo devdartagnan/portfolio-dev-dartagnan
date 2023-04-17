@@ -29,7 +29,9 @@ export default function Description({ info }: Props) {
         <h3 className={styles['aside-description__title']}>{info.titulo}</h3>
         <p className={styles['aside-description__text']}>{info.cardDescription}</p>
         <h4>Tecnologias</h4>
-        <p>{info.tag}</p>
+        <p>{info.tag.map(tag => {
+          return tag === '*' ? false : tag = tag + ' '
+        })}</p>
       </div>
       <Link href={info.altPage.projectUrl} target='_blank'>
         <button className={styles['aside-description__button']} type='button' >Projeto</button>
