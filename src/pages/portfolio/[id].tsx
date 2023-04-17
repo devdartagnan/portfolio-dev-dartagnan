@@ -1,7 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
-import { RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri'
 import { FaReact } from 'react-icons/fa'
 import { SiTypescript, SiJavascript } from 'react-icons/si'
 import styles from './Ids.module.scss'

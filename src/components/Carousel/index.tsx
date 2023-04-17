@@ -1,6 +1,7 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import styles from "./Responsive.module.scss";
+import Image from 'next/image'
 
 interface Props {
   items: {
@@ -34,7 +35,7 @@ export default function ResponsiveCarousel({ items }: Props) {
         {items.altPage.contentImages.map((item: any) => (
           <div key={items.id} className={styles.swipItem}>
             <div className={styles.imgBox}>
-              <img src={item} alt="slides" />
+              <Image src={item} alt="slides" />
             </div>
           </div>
         ))}
