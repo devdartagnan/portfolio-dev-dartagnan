@@ -1,26 +1,44 @@
-import React from 'react';
-import ImageGallery from 'react-image-gallery';
-import "react-image-gallery/styles/scss/image-gallery.scss";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import styles from "./Responsive.module.scss";
 
 interface Props {
-  additionalClass?: string | undefined;
-  images: {
-    original: string;
-    thumbnail: string;
-    thumbnailClass: string;
-    originalClass : string;
-  }[];
+  items: {
+    id: string;
+    data: string;
+    cardDescription: string;
+    titulo: string;
+    tag: [string];
+    thumb: string;
+    altImage: string;
+    altPage: {
+      contentImages: [string];
+      projectUrl: string;
+      textoDescricao: string;
+    }
+  }
 }
-export default function GalleryPortfolio({ images, additionalClass }: Props) {
 
+export default function ResponsiveCarousel({ items }: Props) {
   return (
-    <ImageGallery
-      items={images}
-      showThumbnails={true}
-      thumbnailPosition={'right'}
-      additionalClass={additionalClass}
-      showPlayButton={false}
-      showFullscreenButton={false}
-    />
-  )
+    <div className={styles.container}>
+      <Carousel
+        showArrows={true}
+        // autoPlay={true}
+        showIndicators={false}
+        infiniteLoop={true}
+        dynamicHeight={false}
+        showThumbs={false}
+        className={styles.mySwiper}
+      >
+        {items.altPage.contentImages.map((item: any) => (
+          <div key={items.id} className={styles.swipItem}>
+            <div className={styles.imgBox}>
+              <img src={item} alt="slides" />
+            </div>
+          </div>
+        ))}
+      </Carousel>
+    </div>
+  );
 }

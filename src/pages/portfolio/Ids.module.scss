@@ -78,7 +78,21 @@
   }
 }
 
+.go-back {
+  font-size: var(--medium);
+  padding: 20px;
+  position: absolute;
+  top: 0px;
+}
+
 @media screen and (min-width:768px) {
+  .go-back {
+    font-size: var(--medium);
+    padding: 32px;
+    position: absolute;
+    top: 0px;
+  }
+
   .details {
 
     display: grid;
