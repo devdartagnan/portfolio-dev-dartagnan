@@ -5,7 +5,8 @@ import Layout from './layout'
 import Head from 'next/head'
 import PageProvider from '@/components/PageProvider';
 import '../styles/global.scss'
-
+import React from "react";
+import "./i18n";
 
 export default function App({ Component, pageProps }: AppProps) {
 

@@ -67,6 +67,15 @@
       user-select: none;
       width: 40px;
     }
+
+    .lang {
+      background-color: var(--background);
+      border: none;
+      color: var(--text);
+      padding: 6px;
+
+    }
+
   }
 
   .display-none {

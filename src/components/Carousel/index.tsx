@@ -35,7 +35,7 @@ export default function ResponsiveCarousel({ items }: Props) {
         {items.altPage.contentImages.map((item: any) => (
           <div key={items.id} className={styles.swipItem}>
             <div className={styles.imgBox}>
-              <Image src={item} alt="slides" />
+              <Image src={item} alt="slides" width={0} height={0}/>
             </div>
           </div>
         ))}

@@ -1,0 +1,24 @@
+.tags {
+  display: grid;
+  margin: 65px 0 45px 0;
+
+  .tags-cards {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-weight: 400;
+    gap: 8px;
+    margin-bottom: 28px;
+
+    .svg {
+      font-size: 30px;
+    }
+
+    .title {
+      color: var(--textOpacity06);
+      font-weight: 600;
+    }
+
+    .subtitle {}
+  }
+}

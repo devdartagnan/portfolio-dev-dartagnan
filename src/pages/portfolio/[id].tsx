@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
 import { FaReact } from 'react-icons/fa'
 import { SiTypescript, SiJavascript } from 'react-icons/si'
@@ -26,7 +26,6 @@ export async function getServerSideProps() {
   const res = await fetch(`https://devdartagnan.github.io/api/data.json`)
   const data = await res.json()
 
-
   return { props: { data } }
 }
 
@@ -42,28 +41,12 @@ export default function Details({ data }: any) {
       <IoMdArrowBack className={styles['go-back']} onClick={() => router.push('/portfolio')} />
       <section className={styles.details} >
         <div className={styles['img-carrousel']} key={project.id}>
-          {/* {project.altPage.contentImages.map((img: string) => {
-            return (
-              <Image
-                alt=''
-                height={0}
-                key={img.indexOf(img)}
-                src={img}
-                unoptimized
-                width={0}
-              />
-            )
-          })}
-          <div className={styles.buttons}>
-            <RiArrowLeftSLine className={styles['button-top']} />
-            <RiArrowRightSLine className={styles['button-bottom']} />
-          </div> */}
           <ResponsiveCarousel items={project} />
         </div>
         <section className={styles["details-container"]}>
           <h2>{project.titulo}</h2>
           <p>Description: {project.altPage.textoDescricao}</p>
-          <Link href={project.altPage.projectUrl} className={styles.deploy}>
+          <Link href={project.altPage.projectUrl} className={styles.deploy} target='_blank'>
             Visit the site
           </Link>
           <div className={styles.info_tech}>
