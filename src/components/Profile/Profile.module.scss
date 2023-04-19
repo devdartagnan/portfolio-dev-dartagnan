@@ -1,17 +1,41 @@
 .profile {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 100%;
 
   img {
     object-fit: cover;
-    margin: 56px 0;
+    margin: 38px 0;
     border-radius: 200px;
   }
 
   h2 {
+    text-align: center;
     width: 100%;
+  }
+
+  .certificates {
+    width: 100%;
+
+    h1 {
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .certificates-list {
+      list-style: none;
+      margin-bottom: 45px;
+
+      .list-link {
+        align-items: center;
+        display: flex;
+        gap: 12px;
+      }
+      .list-link:hover{
+        color: var(--hover);
+      }
+    }
   }
 }
 
@@ -35,8 +59,12 @@
   .profile {
     grid-column-start: 3;
 
+    h2 {
+      width: 100%;
+    }
+
     img {
-      margin: 0 0 56px 0;
+      margin: 0 0 38px 0;
     }
   }
 }

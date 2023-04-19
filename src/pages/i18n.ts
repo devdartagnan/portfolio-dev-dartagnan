@@ -51,11 +51,11 @@ i18n.use(initReactI18next).init({
           description: {
             title: '{{title}}',
             description: '{{text}}',
-            tecnologias: {
-              title: '{{text}}',
+            technology: {
+              title: 'Technology',
               text: '{{text}}',
             },
-            button: '{{text}}'
+            button: 'Project'
           }
         },
         contact: {
@@ -118,11 +118,11 @@ i18n.use(initReactI18next).init({
           description: {
             title: '{{title}}',
             description: '{{text}}',
-            tecnologias: {
-              title: '{{text}}',
+            technology: {
+              title: 'Tecnologias',
               text: '{{text}}',
             },
-            button: '{{text}}'
+            button: 'Projeto'
           }
         },
         contact: {

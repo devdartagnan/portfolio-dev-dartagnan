@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next';
 export default function InfoProfile() {
   const { t } = useTranslation();
   return (
-    <div className={styles.div_card}>
       <div className={styles.tags}>
         <div className={styles['tags-cards']}>
           <BsFillBriefcaseFill className={styles.svg} />
@@ -30,6 +29,5 @@ export default function InfoProfile() {
           <p className={styles.subtitle}>{t("home.profile.info.languages.info")}</p>
         </div>
       </div>
-    </div>
   )
 }

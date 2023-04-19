@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, createContext } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from './Portfolio.module.scss'
 import Description from '@/components/ProjectDescription'
 import { ImageList, ImageListItem, ImageListImage } from "@rmwc/image-list";

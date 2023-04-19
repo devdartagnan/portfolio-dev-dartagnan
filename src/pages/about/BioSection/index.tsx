@@ -18,12 +18,6 @@ export default function BioSectionex() {
           <li>Wise choices of the brands and respect to environment and sustainability is fundamental for her.</li>
         </ul>
       </div>
-      <div className='biography-section'>
-        <h2>Pain points</h2>
-        <p>
-          Alma need to find flexible solution that can help her to optimize her time while dedicating herself to her carreer, kids and making sure to maintain a health lifestyle.
-        </p>
-      </div>
     </section>
   )
 }

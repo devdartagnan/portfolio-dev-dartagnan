@@ -5,6 +5,7 @@
 
   select {
     background: var(--secondary);
+    border: solid 2px var(--secondary);
     border-radius: 12px;
     box-sizing: border-box;
     color: var(--text);

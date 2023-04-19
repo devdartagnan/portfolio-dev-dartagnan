@@ -1,14 +1,16 @@
 .tags {
   display: grid;
-  margin: 65px 0 45px 0;
+  margin: 36px 0 12px 0;
 
   .tags-cards {
+    align-items: center;
     display: flex;
     flex-direction: column;
     font-size: 15px;
     font-weight: 400;
     gap: 8px;
     margin-bottom: 28px;
+    text-align: center;
 
     .svg {
       font-size: 30px;
@@ -18,7 +20,12 @@
       color: var(--textOpacity06);
       font-weight: 600;
     }
+  }
+}
 
-    .subtitle {}
+@media screen and (min-width: 1024px) {
+  .tags {
+    column-gap: 32px;
+    grid-template-columns: 1fr 1fr;
   }
 }

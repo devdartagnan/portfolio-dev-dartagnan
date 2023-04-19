@@ -1,13 +1,11 @@
 .h1 {
   font-size: 56px;
   font-weight: 500;
-  grid-column: 1;
-  grid-row: 1;
 }
 
 .tags {
   display: grid;
-  margin: 65px 0 45px 0;
+  margin: 36px 0 12px 0;
 
   .tags-cards {
     display: flex;
@@ -25,19 +23,31 @@
       color: var(--textOpacity06);
       font-weight: 600;
     }
-
-    .subtitle {
-    }
   }
 }
 
+.frameworks {
+  h4{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: var(--medium);
+  }
+  .frameworks-list {
+    display: grid;
+    grid-template-columns: auto auto;
+    list-style: none;
+    .frameworks-items{
+      margin-bottom: 12px;
+      text-decoration: underline;
+    }
+  }
+}
 .tech {
   border-bottom: 1px solid var(--primary);
   display: flex;
   flex-direction: column;
   gap: 24px;
   margin-bottom: 36px;
-  padding-bottom: 45px;
 
   h2 {
     margin-top: 24px;
@@ -127,6 +137,7 @@
       visibility: visible;
     }
   }
+
 }
 
 @media screen and (min-width:425px) {
@@ -137,8 +148,7 @@
 
 @media screen and (min-width:768px) {
   .div_card {
-    grid-column: 1;
-    grid-row: 1;
+
   }
 
   .tags {
