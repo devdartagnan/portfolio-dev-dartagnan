@@ -1,0 +1,65 @@
+{
+  "menu": {
+    "about": "SOBRE",
+    "portfolio": "PORTFÓLIO",
+    "contact": "CONTATO"
+  },
+  "home": {
+    "about": {
+      "title": "Sobre",
+      "about": "Meu nome é Leonardo e sou um desenvolvedor front-end apaixonado com um olhar apurado para design. Embora ainda não tenha nenhuma experiência de trabalho, tenho aprimorado minhas habilidades trabalhando em vários projetos pessoais. Uma das coisas que adoro no desenvolvimento de front-end é como ele me permite combinar meus interesses em arte e jogos. Vejo o desenvolvimento web como uma forma de arte digital que pode ser usada para criar experiências envolventes e imersivas para os usuários. Eu me esforço para criar designs que não sejam apenas visualmente atraentes, mas também funcionais e fáceis de usar. Quando não estou programando, geralmente posso ser encontrado explorando os videogames mais recentes ou participando de exposições de arte locais. Acho que esses dois hobbies me inspiram a pensar criativamente e abordar meu trabalho de diferentes ângulos. Obrigado por reservar um tempo para conferir meu portfólio e espero que goste de explorar meus projetos tanto quanto eu gostei de criá-los"
+    },
+    "profile": {
+      "title": "Óla, e bem vindo ao meu portfólio",
+      "info": {
+        "role": {
+          "title": "Função",
+          "info": "Desenvolvedor Front-end"
+        },
+        "location": {
+          "title": "Localização",
+          "info": "Lisboa - Portugal"
+        },
+        "age": {
+          "title": "Idade",
+          "info": "31"
+        },
+        "languages": {
+          "title": "Linguagens",
+          "info": "Portugues / Inglês"
+        }
+      },
+      "certificates": "Certificados"
+    },
+    "skills": {
+      "needs": ""
+    }
+  },
+  "portfolio": {
+    "filter": "Todos",
+    "description": {
+      "title": "({{text}})",
+      "description": "({{text}})",
+      "technology": {
+        "title": "Tecnologias",
+        "text": "({{text}})"
+      },
+      "button": "Projeto"
+    }
+  },
+  "contact": {
+    "title": "Me contate,",
+    "subTitle": "e me envie ofertas, perguntas ou qualquer coisa",
+    "label": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Mensagem"
+    },
+    "button": "Me envie!"
+  },
+  "descrption": {
+    "title": "Descrição",
+    "site": "Visite o site",
+    "technology": "Contact"
+  }
+}

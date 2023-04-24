@@ -26,7 +26,7 @@ interface Props {
   }
 }
 export default function Description({ info }: Props) {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
   return (
     <aside className={styles['aside-description']}>
       <div className={styles['aside-description__body-info']}>
