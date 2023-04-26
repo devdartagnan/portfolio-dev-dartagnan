@@ -4,7 +4,7 @@ import Description from '@/components/ProjectDescription'
 import { ImageList, ImageListItem, ImageListImage } from "@rmwc/image-list";
 import { useTranslation } from 'react-i18next'
 import Link from "next/link";
-
+import Image from 'next/image'
 
 export interface Data {
   data: [{
@@ -42,7 +42,6 @@ function useLastSeen(prop: any) {
 
   return lastSeen;
 }
-
 
 export async function getServerSideProps() {
   const res = await fetch(`https://devdartagnan.github.io/api/data.json`)
@@ -86,7 +85,10 @@ export default function Portfolio({ data }: Data) {
               return lastWidth <= 768 ? (
                 <ImageListItem key={item.id} className={styles['gallery-item']}>
                   <Link className={styles['gallery-a']} href={`/portfolio/${item.id}`}>
-                    <ImageListImage
+                    <Image
+                      priority={true}
+                      width={100}
+                      height={100}
                       src={item.thumb}
                       alt={item.altImage}
                       className={styles['gallery-content']}
@@ -98,7 +100,10 @@ export default function Portfolio({ data }: Data) {
                 </ImageListItem>
               ) : (
                 <ImageListItem key={item.id} className={styles['gallery-item']}>
-                  <ImageListImage
+                  <Image
+                    priority={true}
+                    width={100}
+                    height={100}
                     src={item.thumb}
                     alt={item.altImage}
                     className={styles['gallery-content']}

@@ -25,8 +25,8 @@ export default function ResponsiveCarousel({ items }: Props) {
     <div className={styles.container}>
       <Carousel
         showArrows={true}
-        // autoPlay={true}
-        showIndicators={false}
+        showStatus={false}
+        showIndicators={true}
         infiniteLoop={true}
         dynamicHeight={false}
         showThumbs={false}
