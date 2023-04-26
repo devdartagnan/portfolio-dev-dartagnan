@@ -53,9 +53,17 @@ export default function Description({ info }: Props) {
           {tags(<DiResponsive />, 'responsive')}
         </div>
       </div>
-      <Link href={info.altPage.projectUrl} target='_blank'>
-        <button className={styles['aside-description__button']} type='button' >{t("portfolio.description.button")}</button>
-      </Link>
+      <button
+        className={styles['aside-description__button']}
+        type='button' >
+        <Link
+          href={info.altPage.projectUrl}
+          target='_blank'
+          className={styles['aside-description__link']}
+        >
+          {t("portfolio.description.button")}
+        </Link>
+      </button>
     </aside >
   )
 }

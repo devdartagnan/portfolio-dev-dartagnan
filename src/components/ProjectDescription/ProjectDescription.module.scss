@@ -49,11 +49,12 @@
     &:hover {
       background-color: var(--hover);
     }
-  }
-}
 
-@media screen and (max-width: 1024px) {
-  // .aside-description {
-  //   display: none;
-  // }
+    .aside-description__link {
+      display: grid;
+      height: 100%;
+      place-items: center;
+      width: 100%;
+    }
+  }
 }

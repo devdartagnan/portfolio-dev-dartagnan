@@ -82,7 +82,6 @@ export default function Portfolio({ data }: Data) {
             masonry
           >
             {tagFilter.map((item) => {
-              console.log(actualObject)
               return (
                 <ImageListItem key={item.id} className={styles['gallery-item']}>
                   <Image
@@ -95,7 +94,7 @@ export default function Portfolio({ data }: Data) {
                     onClick={
                       () => {
                         setActualObject(item)
-                        setActualClass('gallery-active')
+                        lastWidth <= 1024 ? setActualClass('gallery-active') : void (0)
                       }
                     }
                   />
@@ -110,7 +109,6 @@ export default function Portfolio({ data }: Data) {
                     <Description info={actualObject} />
                   </figcaption>
                     : void (0)}
-
                 </ImageListItem>
               )
             })}
