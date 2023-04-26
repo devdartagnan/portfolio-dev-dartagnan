@@ -33,23 +33,25 @@
 
         .gallery-active {
           background-color: var(--secondary);
-          display: none;
           height: 100%;
+          min-height: 300px;
           position: absolute;
+          opacity: 0.9;
           overflow: hidden;
           top: 0;
+          left: 0;
           width: 100%;
           z-index: 2;
         }
 
+        .gallery-unactive {
+          display: none;
+        }
       }
     }
   }
 }
 
-.gallery-content:hover~.gallery-active{
-  display: flex;
-}
 @media screen and (min-width:768px) {
 
   .container {
@@ -144,6 +146,7 @@
 
     .portfolio {
       grid-template-columns: 300px auto;
+
       .gallery {
         max-height: 1000px;
 
@@ -155,8 +158,9 @@
     }
   }
 }
-@media only screen and (hover: none) and (pointer: coarse){
+
+@media only screen and (hover: none) and (pointer: coarse) {
 
   /* Regular CSS rules here*/
-  
-  }
+
+}

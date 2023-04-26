@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from './Portfolio.module.scss'
 import Description from '@/components/ProjectDescription'
-import { ImageList, ImageListItem, ImageListImage } from "@rmwc/image-list";
+import { ImageList, ImageListItem } from "@rmwc/image-list";
 import { useTranslation } from 'react-i18next'
-import Link from "next/link";
 import Image from 'next/image'
 
 export interface Data {
@@ -53,6 +52,7 @@ export async function getServerSideProps() {
 export default function Portfolio({ data }: Data) {
   const dataInicial = data[0]
   const [actualObject, setActualObject] = useState(dataInicial)
+  const [actualClass, setActualClass] = useState('gallery-unactive')
   const [filterValue, setFilterValue] = useState('*')
   const tagFilter = data.filter((item) => {
     return item.tag.find(value => value === filterValue ? item : false)
@@ -73,7 +73,7 @@ export default function Portfolio({ data }: Data) {
         </select>
       </div>
       <div className={styles.portfolio}>
-        <Description info={actualObject} />
+        {lastWidth >= 1024 ? <Description info={actualObject} /> : void (0)}
         <div
           className={styles.gallery}
           id="gallery"
@@ -82,23 +82,8 @@ export default function Portfolio({ data }: Data) {
             masonry
           >
             {tagFilter.map((item) => {
-              return /*lastWidth <= 768 ? */(
-              //   <ImageListItem key={item.id} className={styles['gallery-item']}>
-              //     <Link className={styles['gallery-a']} href={`/portfolio/${item.id}`}>
-              //       <Image
-              //         priority={true}
-              //         width={100}
-              //         height={100}
-              //         src={item.thumb}
-              //         alt={item.altImage}
-              //         className={styles['gallery-content']}
-              //         onClick={
-              //           () => { setActualObject(item) }
-              //         }
-              //       />
-              //     </Link>
-              //   </ImageListItem>
-              // ) : (
+              console.log(actualObject)
+              return (
                 <ImageListItem key={item.id} className={styles['gallery-item']}>
                   <Image
                     priority={true}
@@ -108,9 +93,24 @@ export default function Portfolio({ data }: Data) {
                     alt={item.altImage}
                     className={styles['gallery-content']}
                     onClick={
-                      () => { setActualObject(item) }
+                      () => {
+                        setActualObject(item)
+                        setActualClass('gallery-active')
+                      }
                     }
                   />
+                  {actualObject.id === item.id ? <figcaption
+                    className={styles[`${actualClass}`]}
+                    onClick={
+                      () => {
+                        setActualClass('gallery-unactive')
+                      }
+                    }
+                  >
+                    <Description info={actualObject} />
+                  </figcaption>
+                    : void (0)}
+
                 </ImageListItem>
               )
             })}
