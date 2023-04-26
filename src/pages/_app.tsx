@@ -8,8 +8,11 @@ import '../styles/global.scss'
 import React from "react";
 import "./i18n";
 
-export default function App({ Component, pageProps }: AppProps) {
+export function reportWebVitals(metric: any) {
+  console.log(metric)
+}
 
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
       <Head>

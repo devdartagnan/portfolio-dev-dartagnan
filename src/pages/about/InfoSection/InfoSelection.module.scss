@@ -1,6 +1,5 @@
 .h1 {
-  font-size: 56px;
-  font-weight: 500;
+  display: none;
 }
 
 .tags {
@@ -27,21 +26,24 @@
 }
 
 .frameworks {
-  h4{
+  h4 {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: var(--medium);
   }
+
   .frameworks-list {
     display: grid;
     grid-template-columns: auto auto;
     list-style: none;
-    .frameworks-items{
+
+    .frameworks-items {
       margin-bottom: 12px;
       text-decoration: underline;
     }
   }
 }
+
 .tech {
   border-bottom: 1px solid var(--primary);
   display: flex;
@@ -158,6 +160,11 @@
 }
 
 @media screen and (min-width:1024px) {
+  .h1 {
+    display: inline;
+    font-size: 56px;
+    font-weight: 500;
+  }  
   .tags {
     gap: 16px;
     margin: 176px auto auto auto;

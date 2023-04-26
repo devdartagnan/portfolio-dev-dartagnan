@@ -1,9 +1,16 @@
 .about {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   margin: 36px 0;
   padding: 0 var(--medium)
 }
+
+.h1 {
+  font-size: 56px;
+  font-weight: 500;
+  padding: var(--medium);
+  padding-bottom: 0;
+}
+
 
 @media screen and (min-width:1024px) {
   .about {
@@ -15,4 +22,9 @@
     margin: auto;
     padding-top: 24px;
   }
+
+  .h1 {
+    display: none;
+  }
+
 }

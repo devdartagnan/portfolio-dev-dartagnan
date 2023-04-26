@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from './Portfolio.module.scss'
 import Description from '@/components/ProjectDescription'
 import { ImageList, ImageListItem, ImageListImage } from "@rmwc/image-list";
-import Link from "next/link";
 import { useTranslation } from 'react-i18next'
+import Link from "next/link";
 
 
 export interface Data {
@@ -26,13 +26,6 @@ export interface Data {
     }
   }]
 }
-
-export async function getServerSideProps() {
-  const res = await fetch(`https://devdartagnan.github.io/api/data.json`)
-  const data = await res.json()
-
-  return { props: { data } }
-}
 function updateLastSeen() {
   const lastWidth: string = window.innerWidth.toString()
   return lastWidth;
@@ -50,6 +43,14 @@ function useLastSeen(prop: any) {
   return lastSeen;
 }
 
+
+export async function getServerSideProps() {
+  const res = await fetch(`https://devdartagnan.github.io/api/data.json`)
+  const data = await res.json()
+
+  return { props: { data } }
+}
+
 export default function Portfolio({ data }: Data) {
   const dataInicial = data[0]
   const [actualObject, setActualObject] = useState(dataInicial)
@@ -57,8 +58,9 @@ export default function Portfolio({ data }: Data) {
   const tagFilter = data.filter((item) => {
     return item.tag.find(value => value === filterValue ? item : false)
   })
-  const lastWidth = parseInt(useLastSeen(updateLastSeen))
+
   const { t } = useTranslation();
+  const lastWidth = parseInt(useLastSeen(updateLastSeen))
   return (
     <section className={styles.container}>
       <div className={styles['filter-inputs']}>

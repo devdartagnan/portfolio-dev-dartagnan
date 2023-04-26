@@ -87,7 +87,7 @@ i18n
         translation: {
           menu: {
             about: 'SOBRE',
-            portfolio: 'PORTFÓLIO',
+            portfolio: 'PORTEFÓLIO',
             contact: 'CONTATO'
           },
           home: {

@@ -1,6 +1,9 @@
 .tags {
+  column-gap: 32px;
   display: grid;
-  margin: 36px 0 12px 0;
+  margin: 36px 0 18px 0;
+  grid-template-columns: auto auto;
+  gap: 16px;
 
   .tags-cards {
     align-items: center;

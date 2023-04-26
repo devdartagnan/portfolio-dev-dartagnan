@@ -6,10 +6,13 @@ import PictureProfile from '@/components/Profile'
 export default function About() {
 
   return (
-    <section className={styles.about}>
-      <InfoSection />
-      <BioSectionex />
-      <PictureProfile />
-    </section>
+    <>
+      <h1 className={styles.h1}>Dev <br /> Dartagnan.</h1>
+      <section className={styles.about}>
+        <InfoSection />
+        <BioSectionex />
+        <PictureProfile />
+      </section>
+    </>
   )
 }
