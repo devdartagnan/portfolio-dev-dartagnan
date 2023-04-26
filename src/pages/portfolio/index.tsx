@@ -82,23 +82,23 @@ export default function Portfolio({ data }: Data) {
             masonry
           >
             {tagFilter.map((item) => {
-              return lastWidth <= 768 ? (
-                <ImageListItem key={item.id} className={styles['gallery-item']}>
-                  <Link className={styles['gallery-a']} href={`/portfolio/${item.id}`}>
-                    <Image
-                      priority={true}
-                      width={100}
-                      height={100}
-                      src={item.thumb}
-                      alt={item.altImage}
-                      className={styles['gallery-content']}
-                      onClick={
-                        () => { setActualObject(item) }
-                      }
-                    />
-                  </Link>
-                </ImageListItem>
-              ) : (
+              return /*lastWidth <= 768 ? */(
+              //   <ImageListItem key={item.id} className={styles['gallery-item']}>
+              //     <Link className={styles['gallery-a']} href={`/portfolio/${item.id}`}>
+              //       <Image
+              //         priority={true}
+              //         width={100}
+              //         height={100}
+              //         src={item.thumb}
+              //         alt={item.altImage}
+              //         className={styles['gallery-content']}
+              //         onClick={
+              //           () => { setActualObject(item) }
+              //         }
+              //       />
+              //     </Link>
+              //   </ImageListItem>
+              // ) : (
                 <ImageListItem key={item.id} className={styles['gallery-item']}>
                   <Image
                     priority={true}

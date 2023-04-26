@@ -71,7 +71,7 @@
       box-sizing: border-box;
       display: grid;
       gap: 46px;
-      grid-template-columns: 300px auto;
+      // grid-template-columns: 300px auto;
       height: 500px;
       margin: var(--large) auto;
       max-width: 1600px;
@@ -143,6 +143,7 @@
     padding: 0 var(--medium);
 
     .portfolio {
+      grid-template-columns: 300px auto;
       .gallery {
         max-height: 1000px;
 
