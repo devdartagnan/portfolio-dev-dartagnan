@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import { FaReact } from 'react-icons/fa'
 import { SiTypescript, SiJavascript } from 'react-icons/si'
+import { DiResponsive } from 'react-icons/di'
 
 interface Props {
   info: {
@@ -25,8 +26,20 @@ interface Props {
     }
   }
 }
+
 export default function Description({ info }: Props) {
   const { t } = useTranslation();
+  const tag = (tag: string) => { return info.tag.includes(tag) }
+
+  function tags(el: React.ReactNode, check: string) {
+    return tag(check) ? (
+      <div>
+        {el}
+        <h1>{check}</h1>
+      </div>
+    ) : void (0)
+  }
+
   return (
     <aside className={styles['aside-description']}>
       <div className={styles['aside-description__body-info']}>
@@ -34,9 +47,10 @@ export default function Description({ info }: Props) {
         <p className={styles['aside-description__text']}>{info.cardDescription}</p>
         <h4 className={styles['aside-description__second-title']}>{t('portfolio.description.technology.title')}</h4>
         <div className={styles['aside-description__tags']}>
-          {info.tag.includes('javascript') ? <SiJavascript/> : void (0)}
-          {info.tag.includes('typescript') ? <SiTypescript /> : void (0)}
-          {info.tag.includes('react') ? <FaReact /> : void (0)}
+          {tags(<SiJavascript />, 'javascript')}
+          {tags(<SiTypescript />, 'typescript')}
+          {tags(<FaReact />, 'react')}
+          {tags(<DiResponsive />, 'responsive')}
         </div>
       </div>
       <Link href={info.altPage.projectUrl} target='_blank'>

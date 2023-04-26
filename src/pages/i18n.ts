@@ -61,7 +61,6 @@ i18n
               description: '{{text}}',
               technology: {
                 title: 'Technology',
-                text: '{{text}}',
               },
               button: 'Project'
             }
@@ -128,7 +127,6 @@ i18n
               description: '{{text}}',
               technology: {
                 title: 'Tecnologias',
-                text: '{{text}}',
               },
               button: 'Projeto'
             }
