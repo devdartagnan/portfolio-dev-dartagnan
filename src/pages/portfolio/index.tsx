@@ -91,8 +91,7 @@ export default function Portfolio({ data }: Data) {
                 <ImageListItem key={item.id} className={styles['gallery-item']}>
                   <Image
                     priority
-                    height={400}
-                    width={300}
+                    fill
                     src={item.thumb}
                     alt={item.altImage}
                     className={styles['gallery-content']}
