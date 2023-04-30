@@ -41,13 +41,18 @@ function useLastSeen(prop: any) {
 
   return lastSeen;
 }
-
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(`https://devdartagnan.github.io/api/data.json`)
   const data = await res.json()
 
   return { props: { data } }
 }
+// export async function getServerSideProps() {
+//   const res = await fetch(`https://devdartagnan.github.io/api/data.json`)
+//   const data = await res.json()
+
+//   return { props: { data } }
+// }
 
 export default function Portfolio({ data }: Data) {
   const dataInicial = data[0]
@@ -85,9 +90,8 @@ export default function Portfolio({ data }: Data) {
               return (
                 <ImageListItem key={item.id} className={styles['gallery-item']}>
                   <Image
-                    priority={true}
-                    width={100}
-                    height={100}
+                    priority
+                    fill
                     src={item.thumb}
                     alt={item.altImage}
                     className={styles['gallery-content']}

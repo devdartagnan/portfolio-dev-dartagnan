@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"src/**/*,{.tsx,.jsx}\""
+    "format": "prettier --write \"src/**/*,{.tsx,.jsx}\"",
+    "export":"next build && next export"
   },
   "_moduleAliases": {
     "@root": ".",
