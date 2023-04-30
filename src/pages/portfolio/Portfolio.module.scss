@@ -23,11 +23,11 @@
 
       .gallery-item {
         position: relative;
-
+        
         img {
           margin: var(--small) 0;
-          object-fit: contain;
           height: 100%;
+          object-fit: contain;
           width: 100%;
         }
 
@@ -154,7 +154,6 @@
           column-count: 3;
         }
       }
-
     }
   }
 }
