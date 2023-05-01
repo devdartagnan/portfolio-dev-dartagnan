@@ -8,13 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"src/**/*,{.tsx,.jsx}\"",
-    "export":"next build && next export"
+    "export": "next build && next export"
   },
   "_moduleAliases": {
     "@root": ".",
     "something": "src/foo"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.11",

@@ -37,6 +37,14 @@
     width: calc(100vw - 48px);
   }
 
+  .red {
+    color: rgb(215, 9, 9);
+  }
+
+  .off {
+    color: var(--text);
+  }
+
   .textarea {
     border: none;
     border-radius: 4px;
@@ -105,7 +113,6 @@
         font-size: 16px;
         height: 160px;
         padding: 12px 0 0 12px;
-        text-transform: capitalize;
         width: 50%;
       }
 
