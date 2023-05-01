@@ -9,7 +9,10 @@ export interface Data {
   data: [{
     id: string,
     data: string,
-    cardDescription: string,
+    cardDescription: {
+      en: string,
+      pt: string
+    },
     titulo: string,
     tag: [
       string
@@ -21,7 +24,6 @@ export interface Data {
         string
       ],
       projectUrl: string,
-      textoDescricao: string
     }
   }]
 }
@@ -47,12 +49,7 @@ export async function getStaticProps() {
 
   return { props: { data } }
 }
-// export async function getServerSideProps() {
-//   const res = await fetch(`https://devdartagnan.github.io/api/data.json`)
-//   const data = await res.json()
 
-//   return { props: { data } }
-// }
 
 export default function Portfolio({ data }: Data) {
   const dataInicial = data[0]
