@@ -4,10 +4,6 @@ Disallow: /blog
 
 User-agent: * 
 Allow: /index
-Allow: /index.html
 Allow: /contact
-Allow: /contact.html
-Allow: /details*
-Allow: /details*.html
+Allow: /details
 Allow: /portfolio
-Allow: /portfolio.html
