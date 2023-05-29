@@ -51,9 +51,11 @@
     }
 
     .aside-description__link {
-      display: grid;
+      align-items: center;
+      display: flex;
+      gap: 8px;
       height: 100%;
-      place-items: center;
+      justify-content: center;
       width: 100%;
     }
   }

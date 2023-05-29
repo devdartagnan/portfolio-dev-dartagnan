@@ -13,7 +13,10 @@ export interface Data {
       en: string,
       pt: string
     },
-    titulo: string,
+    titulo:  {
+      en: string,
+      pt: string
+    },
     tag: [
       string
     ],

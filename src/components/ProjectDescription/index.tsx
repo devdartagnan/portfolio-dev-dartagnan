@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { FaReact } from 'react-icons/fa'
 import { SiTypescript, SiJavascript } from 'react-icons/si'
 import { DiResponsive } from 'react-icons/di'
+import { BiArrowToRight } from 'react-icons/bi'
 
 interface Props {
   info: {
@@ -14,7 +15,10 @@ interface Props {
       en: string,
       pt: string
     },
-    titulo: string,
+    titulo:  {
+      en: string,
+      pt: string
+    },
     tag: [
       string
     ],
@@ -44,7 +48,9 @@ export default function Description({ info }: Props) {
   return (
     <aside className={styles['aside-description']}>
       <div className={styles['aside-description__body-info']}>
-        <h3 className={styles['aside-description__title']}>{info.titulo}</h3>
+        <h3 className={styles['aside-description__title']}>
+        {i18n.language === 'en' ? info.titulo.en : info.titulo.pt}
+        </h3>
         <p className={styles['aside-description__text']}>
           {i18n.language === 'en' ? info.cardDescription.en : info.cardDescription.pt}
         </p>
@@ -67,6 +73,7 @@ export default function Description({ info }: Props) {
           className={styles['aside-description__link']}
         >
           {t("portfolio.description.button")}
+          <BiArrowToRight />
         </Link>
       </button>
     </aside >
