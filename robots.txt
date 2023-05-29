@@ -1,7 +1,8 @@
 User-agent: * 
 Disallow: /dashboard
 Disallow: /blog
-Disallow: /blog[]
+
+User-agent: * 
 Allow: /index
 Allow: /index.html
 Allow: /contact
