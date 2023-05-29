@@ -16,10 +16,12 @@
   .about {
     display: grid;
     gap: 25px;
-    grid-template-columns: 1fr 40% 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1;
     max-width: 1660px;
-    margin: auto;
+    margin-top: auto;
+    margin-left: var(--medium);
+    margin-right: var(--medium);
     padding-top: 24px;
   }
 

@@ -16,28 +16,6 @@
     width: 100%;
   }
 
-  .certificates {
-    width: 100%;
-
-    h1 {
-      margin-bottom: 32px;
-      text-align: center;
-    }
-
-    .certificates-list {
-      list-style: none;
-      margin-bottom: 45px;
-
-      .list-link {
-        align-items: center;
-        display: flex;
-        gap: 12px;
-      }
-      .list-link:hover{
-        color: var(--hover);
-      }
-    }
-  }
 }
 
 @media screen and (min-width:425px) {

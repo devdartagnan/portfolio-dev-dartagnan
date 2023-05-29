@@ -11,15 +11,17 @@ import { useTranslation } from 'react-i18next'
 export default function Header() {
   const [display, setDisplay] = useState('display-none')
   const { setTheme, resolvedTheme } = useTheme()
-  // const [overFlow, setOverFlow] = useState(false)
+
   function toggleNavMenu() {
     display === 'display-none' ? setDisplay('display-flex') : setDisplay('display-none')
   }
+
   const { i18n, t } = useTranslation();
   const onChangeLang = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const lang_code = e.target.value;
     i18n.changeLanguage(lang_code);
   };
+
   return (
     <header className={styles.header}>
       <IoMenuOutline size={'32px'} onClick={() => toggleNavMenu()} className={styles['menu-bar']} />

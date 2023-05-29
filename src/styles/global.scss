@@ -10,9 +10,10 @@
   --hover: #f5a1a1;
   --small: 16px;
   --medium: 24px;
+  --font-size-36: 36px;
   --large: 48px;
-  --box-shadow:#101010;
-  --box-shadow-hover:#000000;
+  --box-shadow: #101010;
+  --box-shadow-hover: #000000;
 }
 
 html[data-theme='light'] {
@@ -26,9 +27,10 @@ html[data-theme='light'] {
   --hover: #f5a1a1;
   --small: 16px;
   --medium: 24px;
+  --font-size-36: 36px;
   --large: 48px;
-  --box-shadow:#dddddd;
-  --box-shadow-hover:#aaaaaa;
+  --box-shadow: #dddddd;
+  --box-shadow-hover: #aaaaaa;
 }
 
 html[data-theme='dark'] {
@@ -42,9 +44,10 @@ html[data-theme='dark'] {
   --hover: #f5a1a1;
   --small: 16px;
   --medium: 24px;
+  --font-size-36: 36px;
   --large: 48px;
-  --box-shadow:#111111;
-  --box-shadow-hover:#090909;
+  --box-shadow: #111111;
+  --box-shadow-hover: #090909;
 }
 
 * {
