@@ -42,7 +42,7 @@ export default function Header() {
           <li className={styles.line}></li>
           <li className={styles['container-social_midias']}>
             <Link href={'https://www.linkedin.com/in/leozinsk/'} className={styles.social_midias} target='_blank'>Linkedin</Link>
-            <Link href={''} className={styles.social_midias} id={styles['instagram-btn']} target='_blank'>Instagram</Link>
+            <Link href={''} className={styles.social_midias} id={styles['instagram-btn']}>Instagram</Link>
             <Link href={'https://github.com/devdartagnan'} className={styles.social_midias} target='_blank'>Github</Link>
           </li>
         </ul>
