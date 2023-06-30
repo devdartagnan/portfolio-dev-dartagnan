@@ -62,7 +62,8 @@ i18n
               technology: {
                 title: 'Technology',
               },
-              button: 'Project'
+              buttonRepo: 'Repository',
+              buttonLink: 'Live'
             }
           },
           contact: {
@@ -128,7 +129,8 @@ i18n
               technology: {
                 title: 'Tecnologias',
               },
-              button: 'Projeto'
+              buttonRepo: 'Repositorio',
+              buttonLink: 'Live'
             }
           },
           contact: {

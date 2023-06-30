@@ -41,15 +41,15 @@ export default function Header() {
           </li>
           <li className={styles.line}></li>
           <li className={styles['container-social_midias']}>
-            <Link href={''} className={styles.social_midias}>Linkedin</Link>
-            <Link href={''} className={styles.social_midias}>Instagram</Link>
-            <Link href={'https://github.com/devdartagnan'} className={styles.social_midias}>Github</Link>
+            <Link href={'https://www.linkedin.com/in/leozinsk/'} className={styles.social_midias} target='_blank'>Linkedin</Link>
+            <Link href={''} className={styles.social_midias} id={styles['instagram-btn']} target='_blank'>Instagram</Link>
+            <Link href={'https://github.com/devdartagnan'} className={styles.social_midias} target='_blank'>Github</Link>
           </li>
         </ul>
         <SvgIcon onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')} className={styles.themeBtn}>
           <path d='M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z' />
         </SvgIcon>
-        <select defaultValue={i18n.language} className={styles.lang} onChange={onChangeLang}>
+        <select aria-label='languages' defaultValue={i18n.language} className={styles.lang} onChange={onChangeLang}>
           {LANGUAGES.map(({ code, label }) => (
             <option key={code} value={code} className={styles['select-options']}>
               {label}

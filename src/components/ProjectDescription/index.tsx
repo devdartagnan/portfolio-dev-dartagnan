@@ -15,7 +15,7 @@ interface Props {
       en: string,
       pt: string
     },
-    titulo:  {
+    titulo: {
       en: string,
       pt: string
     },
@@ -28,7 +28,8 @@ interface Props {
       contentImages: [
         string
       ],
-      projectUrl: string
+      projectUrl: string,
+      repoUrl: string
     }
   }
 }
@@ -49,7 +50,7 @@ export default function Description({ info }: Props) {
     <aside className={styles['aside-description']}>
       <div className={styles['aside-description__body-info']}>
         <h3 className={styles['aside-description__title']}>
-        {i18n.language === 'en' ? info.titulo.en : info.titulo.pt}
+          {i18n.language === 'en' ? info.titulo.en : info.titulo.pt}
         </h3>
         <p className={styles['aside-description__text']}>
           {i18n.language === 'en' ? info.cardDescription.en : info.cardDescription.pt}
@@ -64,18 +65,32 @@ export default function Description({ info }: Props) {
           {tags(<DiResponsive />, 'responsive')}
         </div>
       </div>
-      <button
-        className={styles['aside-description__button']}
-        type='button' >
-        <Link
-          href={info.altPage.projectUrl}
-          target='_blank'
-          className={styles['aside-description__link']}
-        >
-          {t("portfolio.description.button")}
-          <BiArrowToRight />
-        </Link>
-      </button>
+      <div className={styles['button_div']}>
+        <button
+          className={styles['aside-description__button']}
+          type='button' >
+          <Link
+            href={info.altPage.projectUrl}
+            target='_blank'
+            className={styles['aside-description__link']}
+          >
+            {t("portfolio.description.buttonLink")}
+            <BiArrowToRight />
+          </Link>
+        </button>
+        <button
+          className={styles['aside-description__button']}
+          type='button' >
+          <Link
+            href={info.altPage.repoUrl}
+            target='_blank'
+            className={styles['aside-description__link']}
+          >
+            {t("portfolio.description.buttonRepo")}
+            <BiArrowToRight />
+          </Link>
+        </button>
+      </div>
     </aside >
   )
 }

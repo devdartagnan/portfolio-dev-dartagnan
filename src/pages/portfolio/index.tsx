@@ -13,7 +13,7 @@ export interface Data {
       en: string,
       pt: string
     },
-    titulo:  {
+    titulo: {
       en: string,
       pt: string
     },
@@ -27,6 +27,7 @@ export interface Data {
         string
       ],
       projectUrl: string,
+      repoUrl: string
     }
   }]
 }
@@ -68,7 +69,7 @@ export default function Portfolio({ data }: Data) {
   return (
     <section className={styles.container}>
       <div className={styles['filter-inputs']}>
-        <select name="" id="" onChange={(value) => {
+        <select aria-label="Tecnology" onChange={(value) => {
           setFilterValue(value.target.value)
         }}>
           <option value="*">{t("portfolio.filter")}</option>
