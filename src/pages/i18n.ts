@@ -41,7 +41,7 @@ i18n
                 },
                 age: {
                   title: 'Age',
-                  info: '31',
+                  info: '32',
                 },
                 languages: {
                   title: 'Languages',
@@ -108,7 +108,7 @@ i18n
                 },
                 age: {
                   title: 'Idade',
-                  info: '31',
+                  info: '32',
                 },
                 languages: {
                   title: 'Linguagens',
