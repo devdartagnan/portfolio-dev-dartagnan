@@ -6,31 +6,30 @@ import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 
 export interface Data {
-  data: [{
-    id: string,
-    data: string,
-    cardDescription: {
-      en: string,
-      pt: string
-    },
-    titulo: {
-      en: string,
-      pt: string
-    },
-    tag: [
+  id: string,
+  data: string,
+  cardDescription: {
+    en: string,
+    pt: string
+  },
+  titulo: {
+    en: string,
+    pt: string
+  },
+  tag: [
+    string
+  ],
+  thumb: string,
+  altImage: string,
+  altPage: {
+    contentImages: [
       string
     ],
-    thumb: string,
-    altImage: string,
-    altPage: {
-      contentImages: [
-        string
-      ],
-      projectUrl: string,
-      repoUrl: string
-    }
-  }]
+    projectUrl: string,
+    repoUrl: string
+  }
 }
+
 function updateLastSeen() {
   const lastWidth: string = window.innerWidth.toString()
   return lastWidth;
@@ -47,20 +46,14 @@ function useLastSeen(prop: any) {
 
   return lastSeen;
 }
-export async function getStaticProps() {
-  const res = await fetch(`https://devdartagnan.github.io/api/data.json`)
-  const data = await res.json()
 
-  return { props: { data } }
-}
-
-
-export default function Portfolio({ data }: Data) {
+export default function Portfolio() {
+  const data = require('../../api/data.json')
   const dataInicial = data[0]
   const [actualObject, setActualObject] = useState(dataInicial)
   const [actualClass, setActualClass] = useState('gallery-unactive')
   const [filterValue, setFilterValue] = useState('*')
-  const tagFilter = data.filter((item) => {
+  const tagFilter = data.filter((item: Data) => {
     return item.tag.find(value => value === filterValue ? item : false)
   })
 
@@ -87,7 +80,7 @@ export default function Portfolio({ data }: Data) {
           <ImageList
             masonry
           >
-            {tagFilter.map((item) => {
+            {tagFilter.map((item: Data) => {
               return (
                 <ImageListItem key={item.id} className={styles['gallery-item']}>
                   <Image
