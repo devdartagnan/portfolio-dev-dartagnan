@@ -4,6 +4,7 @@ import Description from '@/components/ProjectDescription'
 import { ImageList, ImageListItem } from "@rmwc/image-list";
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
+import type { GetStaticProps } from 'next'
 
 export interface Data {
   id: string,
@@ -46,9 +47,20 @@ function useLastSeen(prop: any) {
 
   return lastSeen;
 }
+export const getStaticProps: GetStaticProps<any> = async () => {
+  const fetch = require('cross-fetch');
+  const dev = process.env.NODE_ENV !== 'production';
+  const server = dev ? 'http://localhost:3000' : 'https://devdartagnan.com';
 
-export default function Portfolio() {
-  const data = require('../../api/data.json')
+  const res = await fetch(`${server}/api/handler`, {
+    method: "GET"
+  })
+  const repo = await res.json()
+  return { props: { repo } }
+}
+
+export default function Portfolio({ repo }: any) {
+  const data  = repo
   const dataInicial = data[0]
   const [actualObject, setActualObject] = useState(dataInicial)
   const [actualClass, setActualClass] = useState('gallery-unactive')
@@ -59,6 +71,7 @@ export default function Portfolio() {
 
   const { t } = useTranslation();
   const lastWidth = parseInt(useLastSeen(updateLastSeen))
+  
   return (
     <section className={styles.container}>
       <div className={styles['filter-inputs']}>

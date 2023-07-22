@@ -19,7 +19,7 @@ export default function InfoSection() {
             <div className={classNames({
               [styles['skill-item']]: true,
               [styles.hovertext]: true
-            })} data-hover="6 / 10">
+            })} data-hover="7.5 / 10">
               <FaReact className={styles.item__icon} />
               <div className={styles['skill-item__trackBar']}>
                 <span className={classNames({
@@ -55,7 +55,7 @@ export default function InfoSection() {
             <div className={classNames({
               [styles['skill-item']]: true,
               [styles.hovertext]: true
-            })} data-hover="3.5  / 10">
+            })} data-hover="5  / 10">
               <SiTypescript className={styles.item__icon} />
               <div className={styles['skill-item__trackBar']}>
                 <span className={classNames({
@@ -67,7 +67,7 @@ export default function InfoSection() {
             <div className={classNames({
               [styles['skill-item']]: true,
               [styles.hovertext]: true
-            })} data-hover="4 / 10">
+            })} data-hover="6 / 10">
               <FaGitAlt className={styles.item__icon} />
               <div className={styles['skill-item__trackBar']}>
                 <span className={classNames({
@@ -79,7 +79,7 @@ export default function InfoSection() {
             <div className={classNames({
               [styles['skill-item']]: true,
               [styles.hovertext]: true
-            })} data-hover="6.5 / 10">
+            })} data-hover="7.5 / 10">
               <SiJavascript className={styles.item__icon} />
               <div className={styles['skill-item__trackBar']}>
                 <span className={classNames({

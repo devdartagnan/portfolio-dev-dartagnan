@@ -5,14 +5,18 @@ import Layout from './layout'
 import Head from 'next/head'
 import PageProvider from '@/components/PageProvider';
 import '../styles/global.scss'
-import React from "react";
+import React, { createContext, useEffect, useState } from "react";
 import "./i18n";
+import { Data } from './portfolio';
+
+export const ApiData = createContext([{}])
 
 export default function App({ Component, pageProps }: AppProps) {
+  
   return (
     <ThemeProvider>
       <Head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        {/* <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> */}
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <meta name="description" content="This is my portfolio of front end developer, called devdartagnan, here you will see some of my works,
@@ -26,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <PageProvider>
         <Layout>
-          <Component {...pageProps} />
+            <Component {...pageProps} />
         </Layout>
       </PageProvider>
     </ThemeProvider>
