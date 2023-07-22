@@ -50,7 +50,7 @@ function useLastSeen(prop: any) {
 export const getStaticProps: GetServerSideProps<any> = async () => {
   const fetch = require('cross-fetch');
   const dev = process.env.NODE_ENV !== 'production';
-  const server = dev ? 'http://localhost:3000' : 'https://devdartagnan.com';
+  const server = dev ? 'http://localhost:3000' : 'devdartagnan.com';
 
   const res = await fetch(`${server}/api/handler`, {
     method: "GET"
