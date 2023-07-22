@@ -35,7 +35,6 @@ interface Props {
 }
 
 export default function Description({ info }: Props) {
-  console.log('info page', info)
   const { i18n, t } = useTranslation();
   const tag = (tag: string) => { return info.tag.includes(tag) }
   function tags(el: React.ReactNode, check: string) {

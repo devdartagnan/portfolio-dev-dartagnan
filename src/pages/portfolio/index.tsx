@@ -4,7 +4,7 @@ import Description from '@/components/ProjectDescription'
 import { ImageList, ImageListItem } from "@rmwc/image-list";
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
-import type { GetStaticProps } from 'next'
+import type { GetServerSideProps, GetStaticProps } from 'next'
 
 export interface Data {
   id: string,
@@ -47,7 +47,7 @@ function useLastSeen(prop: any) {
 
   return lastSeen;
 }
-export const getStaticProps: GetStaticProps<any> = async () => {
+export const getStaticProps: GetServerSideProps<any> = async () => {
   const fetch = require('cross-fetch');
   const dev = process.env.NODE_ENV !== 'production';
   const server = dev ? 'http://localhost:3000' : 'https://devdartagnan.com';

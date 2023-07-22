@@ -40,7 +40,6 @@ export default function Dashboard({ data, fsSubmit }: Props) {
       body: JSON.stringify({ name: "Lorenzo", email: "lo@lorenzozar.com" })
     });
     const data = await response.json();
-    console.log(data);
   }
   function handleEvent(e: any) {
     const name = e.target.name;
