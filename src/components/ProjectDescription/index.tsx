@@ -6,32 +6,10 @@ import { FaReact } from 'react-icons/fa'
 import { SiTypescript, SiJavascript } from 'react-icons/si'
 import { DiResponsive } from 'react-icons/di'
 import { BiArrowToRight } from 'react-icons/bi'
+import Data from '../../types'
 
 interface Props {
-  info: {
-    id: string,
-    data: string,
-    cardDescription: {
-      en: string,
-      pt: string
-    },
-    titulo: {
-      en: string,
-      pt: string
-    },
-    tag: [
-      string
-    ],
-    thumb: string,
-    altImage: string
-    altPage: {
-      contentImages: [
-        string
-      ],
-      projectUrl: string,
-      repoUrl: string
-    }
-  }
+  info:  Data
 }
 
 export default function Description({ info }: Props) {

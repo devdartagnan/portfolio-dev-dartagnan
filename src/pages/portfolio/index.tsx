@@ -1,68 +1,30 @@
-import React, { useState, useEffect, useRef } from "react";
-import styles from './Portfolio.module.scss'
-import Description from '@/components/ProjectDescription'
-import { ImageList, ImageListItem } from "@rmwc/image-list";
+import React, { useState, useContext } from "react";
 import { useTranslation } from 'react-i18next'
+import { GetServerSideProps } from "next";
 import Image from 'next/image'
-import type { GetServerSideProps, GetStaticProps } from 'next'
+import styles from './Portfolio.module.scss'
 
-export interface Data {
-  id: string,
-  data: string,
-  cardDescription: {
-    en: string,
-    pt: string
-  },
-  titulo: {
-    en: string,
-    pt: string
-  },
-  tag: [
-    string
-  ],
-  thumb: string,
-  altImage: string,
-  altPage: {
-    contentImages: [
-      string
-    ],
-    projectUrl: string,
-    repoUrl: string
-  }
+import useLastSeen, { updateLastSeen } from '../../functions/lastSeen'
+import { ImageList, ImageListItem } from "@rmwc/image-list";
+import Description from '@/components/ProjectDescription'
+
+import Data from '../../types'
+
+export const getServerSideProps: GetServerSideProps<{
+  data: Data
+}> = async () => {
+  const response = await fetch(`${process.env.VERCEL_URL}/api/handler`)
+  const data = await response.json()
+  return { props: { data } }
+}
+interface Props {
+  data:  Data[]
 }
 
-function updateLastSeen() {
-  const lastWidth: string = window.innerWidth.toString()
-  return lastWidth;
-}
+export default function Portfolio({ data }: Props) {
 
-function useLastSeen(prop: any) {
-  const [lastSeen, setLastSeen] = useState('');
-  const retrieved = useRef(false); //To get around strict mode running the hook twice
-  useEffect(() => {
-    if (retrieved.current) return;
-    retrieved.current = true;
-    setLastSeen(prop());
-  }, []);
-
-  return lastSeen;
-}
-export const getStaticProps: GetServerSideProps<any> = async () => {
-  const fetch = require('cross-fetch');
-  const dev = process.env.NODE_ENV !== 'production';
-  const server = dev ? 'http://localhost:3000' : 'https://devdartagnan.com';
-
-  const res = await fetch(`${server}/api/handler`, {
-    method: "GET"
-  })
-  const repo = await res.json()
-  return { props: { repo } }
-}
-
-export default function Portfolio({ repo }: any) {
-  const data  = repo
   const dataInicial = data[0]
-  const [actualObject, setActualObject] = useState(dataInicial)
+  const [actualObject, setActualObject] = useState<Data>(dataInicial)
   const [actualClass, setActualClass] = useState('gallery-unactive')
   const [filterValue, setFilterValue] = useState('*')
   const tagFilter = data.filter((item: Data) => {
@@ -71,7 +33,7 @@ export default function Portfolio({ repo }: any) {
 
   const { t } = useTranslation();
   const lastWidth = parseInt(useLastSeen(updateLastSeen))
-  
+
   return (
     <section className={styles.container}>
       <div className={styles['filter-inputs']}>

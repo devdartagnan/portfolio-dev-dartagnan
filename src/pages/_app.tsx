@@ -5,14 +5,11 @@ import Layout from './layout'
 import Head from 'next/head'
 import PageProvider from '@/components/PageProvider';
 import '../styles/global.scss'
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext } from "react";
 import "./i18n";
-import { Data } from './portfolio';
-
-export const ApiData = createContext([{}])
 
 export default function App({ Component, pageProps }: AppProps) {
-  
+
   return (
     <ThemeProvider>
       <Head>
