@@ -1,39 +1,42 @@
 import React, { useState, useContext } from "react";
 import { useTranslation } from 'react-i18next'
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import Image from 'next/image'
 import styles from './Portfolio.module.scss'
-
 import useLastSeen, { updateLastSeen } from '../../functions/lastSeen'
 import { ImageList, ImageListItem } from "@rmwc/image-list";
 import Description from '@/components/ProjectDescription'
 
 import Data from '../../types'
 
-export const getServerSideProps: GetServerSideProps<{
-  data: Data
-}> = async () => {
-  const response = await fetch(`${process.env.VERCEL_URL}/api/handler`)
-  const data = await response.json()
-  return { props: { data } }
-}
-interface Props {
-  data:  Data[]
+export async function getStaticProps<GetStaticProps>() {
+  const url =
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : "https://portfolio-dev-dartagnan-l3mukstj4-devdartagnan.vercel.app";
+  const res = await fetch(`${url}/api/handler`)
+  const data = await res.json()
+
+  return {
+    props: {
+      data,
+    },
+  };
 }
 
-export default function Portfolio({ data }: Props) {
-
-  const dataInicial = data[0]
+export default function Portfolio({ data }: any) {
+  // const { obj, isLoading } = useContext(ApiData)
+  console.log('portfolio', typeof data)
+  const dataInicial = data?.at(0)
   const [actualObject, setActualObject] = useState<Data>(dataInicial)
   const [actualClass, setActualClass] = useState('gallery-unactive')
   const [filterValue, setFilterValue] = useState('*')
-  const tagFilter = data.filter((item: Data) => {
+  const tagFilter = data?.filter((item: Data) => {
     return item.tag.find(value => value === filterValue ? item : false)
   })
 
   const { t } = useTranslation();
   const lastWidth = parseInt(useLastSeen(updateLastSeen))
-
   return (
     <section className={styles.container}>
       <div className={styles['filter-inputs']}>

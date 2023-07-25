@@ -4,8 +4,9 @@ import '../styles/global.scss';
 import Layout from './layout'
 import Head from 'next/head'
 import PageProvider from '@/components/PageProvider';
+// import FetchApi from '../provider/fetchApi'
 import '../styles/global.scss'
-import React, { createContext } from "react";
+import React from "react";
 import "./i18n";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -26,9 +27,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>DevDartagnan | Front-end Developer.</title>
       </Head>
       <PageProvider>
-        <Layout>
+        {/* <FetchApi> */}
+          <Layout>
             <Component {...pageProps} />
-        </Layout>
+          </Layout>
+        {/* </FetchApi> */}
       </PageProvider>
     </ThemeProvider>
   )

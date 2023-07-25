@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 type Props = {
   fsSubmit: () => void;
   data: [{}]
@@ -48,7 +47,7 @@ export default function Dashboard({ data, fsSubmit }: Props) {
       return { ...prev, [name]: value }
     })
   }
-
+  
   return (
     <form>
       <input required aria-label='id' name='id' type="text" onChange={handleEvent} />
