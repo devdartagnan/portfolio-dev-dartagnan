@@ -4,13 +4,11 @@ import '../styles/global.scss';
 import Layout from './layout'
 import Head from 'next/head'
 import PageProvider from '@/components/PageProvider';
-// import FetchApi from '../provider/fetchApi'
 import '../styles/global.scss'
 import React from "react";
 import "./i18n";
 
 export default function App({ Component, pageProps }: AppProps) {
-
   return (
     <ThemeProvider>
       <Head>

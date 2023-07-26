@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { useTranslation } from 'react-i18next'
-import { GetStaticProps } from "next";
 import Image from 'next/image'
 import styles from './Portfolio.module.scss'
 import useLastSeen, { updateLastSeen } from '../../functions/lastSeen'
@@ -9,11 +8,12 @@ import Description from '@/components/ProjectDescription'
 
 import Data from '../../types'
 
-export async function getStaticProps<GetStaticProps>() {
-  const url =
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:3000"
-      : "https://portfolio-dev-dartagnan-l3mukstj4-devdartagnan.vercel.app";
+export const url =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:3000"
+    : "https://portfolio-dev-dartagnan-l3mukstj4-devdartagnan.vercel.app";
+
+    export async function getStaticProps() {
   const res = await fetch(`${url}/api/handler`)
   const data = await res.json()
 
@@ -25,8 +25,9 @@ export async function getStaticProps<GetStaticProps>() {
 }
 
 export default function Portfolio({ data }: any) {
-  // const { obj, isLoading } = useContext(ApiData)
-  console.log('portfolio', typeof data)
+  const { t } = useTranslation();
+  const lastWidth = parseInt(useLastSeen(updateLastSeen))
+  //
   const dataInicial = data?.at(0)
   const [actualObject, setActualObject] = useState<Data>(dataInicial)
   const [actualClass, setActualClass] = useState('gallery-unactive')
@@ -35,8 +36,6 @@ export default function Portfolio({ data }: any) {
     return item.tag.find(value => value === filterValue ? item : false)
   })
 
-  const { t } = useTranslation();
-  const lastWidth = parseInt(useLastSeen(updateLastSeen))
   return (
     <section className={styles.container}>
       <div className={styles['filter-inputs']}>
