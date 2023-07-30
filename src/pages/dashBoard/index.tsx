@@ -23,7 +23,8 @@ export default function Dashboard() {
 
     await axios.post(`${url}/api/handler`, {
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
       },
       data: JSON.stringify(details)
     })

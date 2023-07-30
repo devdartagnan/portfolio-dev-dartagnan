@@ -22,8 +22,8 @@ export default async function Handler(req, res) {
     try {
       const jsonData = await fsP.readFile(fullPath);
       const objectData = JSON.parse(jsonData);
-
-      const data = req.body;
+      const body = req.body;
+      const data = JSON.parse(body.data)
       objectData.push(data);
 
       const updatedData = JSON.stringify(objectData);
