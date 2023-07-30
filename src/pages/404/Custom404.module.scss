@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  .title {
+    font-size: 24px;
+  }
+
+  .message {
+    color: var(--textOpacity06);
+    font-size: 24px;
+  }
+}

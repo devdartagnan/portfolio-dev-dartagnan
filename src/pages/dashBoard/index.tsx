@@ -5,13 +5,6 @@ import axios from 'axios'
 import { url } from 'pages/portfolio';
 
 export default function Dashboard() {
-  const [altPage, setAltPage] = React.useState({
-    contentImages: [],
-    projectUrl: '',
-    repoUrl: ''
-  })
-  const [cardDescription, setCardDescription] = React.useState({ en: '', pt: '' })
-  const [titulo, setTitulo] = React.useState({ en: '', pt: '' })
   const [details, setDetails] = React.useState({
     id: '',
     data: '',
@@ -42,13 +35,6 @@ export default function Dashboard() {
       .catch(function (error) {
         console.log(error);
       });
-    // fetch('/api/storeJSONData', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(details)
-    // });
   }
 
   function handleEvent(e: any) {
@@ -103,10 +89,6 @@ export default function Dashboard() {
           return { ...prev, [name]: value }
         })
     }
-  }
-
-  function testUrl() {
-
   }
 
   return (
