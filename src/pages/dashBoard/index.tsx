@@ -15,11 +15,12 @@ export default function Dashboard() {
     altImage: '',
     altPage: {}
   })
+
   const saveData = async (e: any) => {
     e.preventDefault()
     details.id = uuidv4().toString()
     details.data = new Date().toString()
-    console.log(JSON.stringify(details))
+    
     await axios(`${url}/api/handler`, {
       method: 'POST',
       headers: {
