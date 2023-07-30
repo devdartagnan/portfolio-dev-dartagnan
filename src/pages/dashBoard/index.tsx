@@ -121,7 +121,6 @@ export default function Dashboard() {
         </div>
 
         <div className={` ${styles.group} ${styles['cardDescription-group']}`}>
-
           <h5>Card description</h5>
           <label htmlFor="en">en
             <input alt='cardDescription' required aria-label='en' name='en' type="text" onChange={handleEvent} />

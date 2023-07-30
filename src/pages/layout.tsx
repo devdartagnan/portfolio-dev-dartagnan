@@ -1,5 +1,4 @@
 import Header from '../components/Header'
-import './dashboard'
 
 type DashboardLayoutProps = {
   children: React.ReactNode,

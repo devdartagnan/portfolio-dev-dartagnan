@@ -39,6 +39,9 @@ export default function Header() {
           <li>
             <Link href="/contact" onClick={() => window.innerWidth > 768 ? void (0) : toggleNavMenu()}>{t("menu.contact")}</Link>
           </li>
+          <li  className={styles['none']} >
+            <Link href="/dashboard" onClick={() => window.innerWidth > 768 ? void (0) : toggleNavMenu()}>{t("menu.contact")}</Link>
+          </li>
           <li className={styles.line}></li>
           <li className={styles['container-social_midias']}>
             <Link href={'https://www.linkedin.com/in/leozinsk/'} className={styles.social_midias} target='_blank'>Linkedin</Link>
