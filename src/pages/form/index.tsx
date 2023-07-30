@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios'
 import { url } from 'pages/portfolio';
 
-export default function Dashboard() {
+export default function Form() {
   const [details, setDetails] = React.useState({
     id: '',
     data: '',
@@ -120,7 +120,7 @@ export default function Dashboard() {
           </label>
         </div>
 
-        <div className={` ${styles.group} ${styles['cardDescription-group']}`}>
+        <div className={`${styles.group} ${styles['cardDescription-group']}`}>
           <h5>Card description</h5>
           <label htmlFor="en">en
             <input alt='cardDescription' required aria-label='en' name='en' type="text" onChange={handleEvent} />
