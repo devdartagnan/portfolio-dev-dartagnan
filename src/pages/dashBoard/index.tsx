@@ -20,9 +20,8 @@ export default function Dashboard() {
     e.preventDefault()
     details.id = uuidv4().toString()
     details.data = new Date().toString()
-    
-    await axios(`${url}/api/handler`, {
-      method: 'POST',
+
+    await axios.post(`${url}/api/handler`, {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -32,9 +31,8 @@ export default function Dashboard() {
         return response
       }
       )
-      .then((json) => console.log((json)))
       .catch(function (error) {
-        console.log(error);
+        console.error(error);
       });
   }
 

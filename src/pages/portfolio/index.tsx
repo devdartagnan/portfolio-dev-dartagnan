@@ -13,7 +13,7 @@ export const url =
     ? "http://localhost:3000"
     : "https://portfolio-dev-dartagnan-l3mukstj4-devdartagnan.vercel.app";
 
-    export async function getStaticProps() {
+export async function getStaticProps() {
   const res = await fetch(`${url}/api/handler`)
   const data = await res.json()
 
